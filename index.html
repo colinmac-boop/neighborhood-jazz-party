@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighborhood Jazz Party — April 25, 2026</title>
+  <meta name="description" content="West Towson & Southland Hills come together for a neighborhood jazz party. Friday, April 25, 2026 from 5-8 PM. Live jazz trio. Benefiting Maryland Food Bank.">
+  <meta property="og:title" content="Neighborhood Jazz Party — April 25, 2026">
+  <meta property="og:description" content="West Towson & Southland Hills come together. Live Jazz Trio. Benefiting Maryland Food Bank.">
+  <meta property="og:image" content="flyer.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a1a;
+      color: #f5f0e8;
+      min-height: 100vh;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0a0a1a 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '♪ ♫ ♪';
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 2rem;
+      opacity: 0.1;
+      color: #d4a54a;
+      letter-spacing: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: #d4a54a;
+      text-align: center;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 300;
+      color: #b8c4d4;
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+
+    .flyer-container {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(212, 165, 74, 0.15), 0 0 0 1px rgba(212, 165, 74, 0.1);
+    }
+
+    .flyer-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .details {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 500px) {
+      .detail-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+
+    .detail-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 165, 74, 0.12);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .detail-card .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #d4a54a;
+      margin-bottom: 8px;
+    }
+
+    .detail-card .value {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .detail-card a {
+      color: #7eb8da;
+      text-decoration: none;
+    }
+
+    .detail-card a:hover {
+      text-decoration: underline;
+    }
+
+    .charity-section {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(180deg, transparent, rgba(212, 165, 74, 0.05), transparent);
+    }
+
+    .charity-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #d4a54a;
+      margin-bottom: 12px;
+    }
+
+    .charity-section p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #b8c4d4;
+      max-width: 500px;
+      margin: 0 auto 24px;
+      line-height: 1.7;
+    }
+
+    .donate-btn {
+      display: inline-block;
+      padding: 14px 40px;
+      background: #d4a54a;
+      color: #0a0a1a;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .donate-btn:hover {
+      background: #e6bb5e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 165, 74, 0.3);
+    }
+
+    .map-section {
+      padding: 0 20px 60px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .map-section iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 10px;
+      filter: grayscale(0.3) contrast(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    footer .musical-notes {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: rgba(212, 165, 74, 0.2);
+      letter-spacing: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>Neighborhood Jazz Party</h1>
+    <p class="subtitle">West Towson &amp; Southland Hills Come Together</p>
+    <div class="flyer-container">
+      <img src="flyer.png" alt="Neighborhood Jazz Party flyer — April 25, 2026, 5-8 PM at 512 W Chesapeake Ave, Towson MD. Live Jazz Trio. Benefiting Maryland Food Bank.">
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="detail-grid">
+      <div class="detail-card">
+        <div class="label">When</div>
+        <div class="value">Friday, April 25, 2026<br>5:00 – 8:00 PM</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Where</div>
+        <div class="value">512 W Chesapeake Ave<br>Towson, MD 21204</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Entertainment</div>
+        <div class="value">Live Jazz Trio</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Benefiting</div>
+        <div class="value"><a href="https://mdfoodbank.org" target="_blank" rel="noopener">Maryland Food Bank</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="charity-section">
+    <h2>Give Back While You Groove</h2>
+    <p>This event supports the Maryland Food Bank, which provides food to families across the state. Donations of any size are welcome and appreciated.</p>
+    <a href="https://mdfoodbank.org/donate/" target="_blank" rel="noopener" class="donate-btn">Donate to Maryland Food Bank</a>
+  </section>
+
+  <section class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3081.5!2d-76.617!3d39.394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z512 W Chesapeake Ave, Towson, MD 21204!5e0!3m2!1sen!2sus!4v1"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Map to 512 W Chesapeake Ave, Towson MD">
+    </iframe>
+  </section>
+
+  <footer>
+    <div class="musical-notes">♪ ♫ ♪ ♫ ♪</div>
+    Bring your neighbors, bring your spirit.
+  </footer>
+
+</body>
+</html>
