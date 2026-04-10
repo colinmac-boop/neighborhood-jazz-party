@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//512wchesapeake.com//Neighborhood Jazz Party//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20260425T170000
+DTEND:20260425T200000
+TZID:America/New_York
+SUMMARY:Neighborhood Jazz Party — 512 W Chesapeake Ave
+DESCRIPTION:West Towson & Southland Hills come together for a neighborhood porch concert. Live music — bass\, guitar & drums. Benefiting Maryland Food Bank.\n\nRSVP: party@spotvid.com\nDonate: https://mdfoodbank.funraise.org/fundraiser/towson-spring-porch-concert\n\nhttps://512wchesapeake.com
+LOCATION:512 W Chesapeake Ave\, Towson\, MD 21204
+URL:https://512wchesapeake.com
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
