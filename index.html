@@ -412,6 +412,62 @@
       transform: translateY(-1px);
     }
 
+    .weather-section {
+      text-align: center;
+      padding: 0 20px 20px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .weather-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 165, 74, 0.12);
+      border-radius: 10px;
+      padding: 24px 28px;
+    }
+
+    .weather-card .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #d4a54a;
+      margin-bottom: 12px;
+    }
+
+    .weather-icon {
+      font-size: 2.4rem;
+      margin-bottom: 6px;
+    }
+
+    .weather-desc {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #f5f0e8;
+      margin-bottom: 8px;
+    }
+
+    .weather-temps {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #d4a54a;
+      margin-bottom: 6px;
+    }
+
+    .weather-precip {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #b8c4d4;
+    }
+
+    .weather-fallback {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #b8c4d4;
+      font-style: italic;
+    }
+
     .rain-note {
       text-align: center;
       padding: 0 20px 40px;
@@ -600,6 +656,15 @@
     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Neighborhood+Jazz+Party+%E2%80%94+512+W+Chesapeake+Ave&dates=20260425T210000Z/20260426T000000Z&details=West+Towson+%26+Southland+Hills+come+together+for+a+neighborhood+porch+concert.+Live+music+%E2%80%94+bass%2C+guitar+%26+drums.+Benefiting+Maryland+Food+Bank.%0A%0ARSVP%3A+party%40spotvid.com%0ADonate%3A+https%3A%2F%2Fmdfoodbank.funraise.org%2Ffundraiser%2Ftowson-spring-porch-concert%0A%0Ahttps%3A%2F%2F512wchesapeake.com&location=512+W+Chesapeake+Ave%2C+Towson%2C+MD+21204" target="_blank" rel="noopener" class="action-btn">📅 Google Calendar</a>
   </div>
 
+  <section class="weather-section" id="weather">
+    <div class="weather-card">
+      <div class="label">April 25 Forecast — Towson</div>
+      <div id="weather-content">
+        <p class="weather-fallback">Loading forecast…</p>
+      </div>
+    </div>
+  </section>
+
   <p class="rain-note">🌦️ Rain or shine — the porch has you covered!</p>
 
   <section class="details">
@@ -697,6 +762,51 @@
       }
       update();
       setInterval(update, 1000);
+    })();
+
+    // Weather forecast for April 25 via Open-Meteo (free, no API key)
+    (function() {
+      var wmoDesc = {
+        0:'Clear Sky',1:'Mainly Clear',2:'Partly Cloudy',3:'Overcast',
+        45:'Foggy',48:'Foggy',51:'Light Drizzle',53:'Drizzle',55:'Heavy Drizzle',
+        56:'Freezing Drizzle',57:'Freezing Drizzle',61:'Light Rain',63:'Rain',
+        65:'Heavy Rain',66:'Freezing Rain',67:'Freezing Rain',
+        71:'Light Snow',73:'Snow',75:'Heavy Snow',77:'Snow Grains',
+        80:'Light Showers',81:'Showers',82:'Heavy Showers',
+        85:'Snow Showers',86:'Heavy Snow Showers',
+        95:'Thunderstorm',96:'Thunderstorm w/ Hail',99:'Thunderstorm w/ Hail'
+      };
+      var wmoIcon = {
+        0:'☀️',1:'🌤️',2:'⛅',3:'☁️',
+        45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',
+        56:'🌧️',57:'🌧️',61:'🌦️',63:'🌧️',65:'🌧️',66:'🌧️',67:'🌧️',
+        71:'🌨️',73:'🌨️',75:'❄️',77:'❄️',
+        80:'🌦️',81:'🌧️',82:'🌧️',85:'🌨️',86:'🌨️',
+        95:'⛈️',96:'⛈️',99:'⛈️'
+      };
+      var el = document.getElementById('weather-content');
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=39.40&longitude=-76.60&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code&temperature_unit=fahrenheit&timezone=America%2FNew_York&start_date=2026-04-25&end_date=2026-04-25')
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          if(!data.daily || !data.daily.time || !data.daily.time.length){
+            el.innerHTML='<p class="weather-fallback">Forecast not yet available — check back closer to April 25!</p>';
+            return;
+          }
+          var code = data.daily.weather_code[0];
+          var hi = Math.round(data.daily.temperature_2m_max[0]);
+          var lo = Math.round(data.daily.temperature_2m_min[0]);
+          var precip = data.daily.precipitation_probability_max[0];
+          var icon = wmoIcon[code]||'🌡️';
+          var desc = wmoDesc[code]||'Mixed Conditions';
+          el.innerHTML =
+            '<div class="weather-icon">'+icon+'</div>'+
+            '<div class="weather-desc">'+desc+'</div>'+
+            '<div class="weather-temps">'+hi+'° / '+lo+'°</div>'+
+            '<div class="weather-precip">💧 '+precip+'% chance of rain</div>';
+        })
+        .catch(function(){
+          el.innerHTML='<p class="weather-fallback">Forecast not yet available — check back closer to April 25!</p>';
+        });
     })();
   </script>
 </body>
