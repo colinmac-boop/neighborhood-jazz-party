@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Value — 512 W Chesapeake Ave, Towson MD 21204</title>
+  <meta name="description" content="Home value estimates for 512 W Chesapeake Ave, Towson MD 21204. Aggregated from Redfin, Zillow, and public records.">
+  <meta property="og:title" content="Home Value — 512 W Chesapeake Ave">
+  <meta property="og:url" content="https://512wchesapeake.com/home-value">
+  <link rel="canonical" href="https://512wchesapeake.com/home-value">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a1a;
+      color: #f5f0e8;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 16px 20px;
+      background: rgba(10, 10, 26, 0.95);
+      border-bottom: 1px solid rgba(212, 165, 74, 0.2);
+    }
+    .nav a {
+      color: #b8c4d4;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav a:hover, .nav a.active {
+      color: #d4a54a;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 48px 20px 32px;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0a0a1a 100%);
+    }
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #d4a54a;
+      margin-bottom: 6px;
+    }
+    .header .address {
+      font-size: 1rem;
+      color: #b8c4d4;
+      font-weight: 300;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    /* Estimate Cards */
+    .estimates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .estimate-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 165, 74, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .estimate-card:hover {
+      border-color: rgba(212, 165, 74, 0.5);
+    }
+    .estimate-card .source {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #8b9ab5;
+      margin-bottom: 8px;
+    }
+    .estimate-card .value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #d4a54a;
+      margin-bottom: 4px;
+    }
+    .estimate-card .change {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .estimate-card .change.up { color: #4ade80; }
+    .estimate-card .change.down { color: #f87171; }
+    .estimate-card .range {
+      font-size: 0.8rem;
+      color: #8b9ab5;
+      margin-top: 6px;
+    }
+    .estimate-card .updated {
+      font-size: 0.7rem;
+      color: #5a6a80;
+      margin-top: 10px;
+    }
+    .estimate-card a {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: #d4a54a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212, 165, 74, 0.3);
+    }
+    .estimate-card a:hover {
+      border-bottom-color: #d4a54a;
+    }
+
+    /* Property Details */
+    .section {
+      margin-bottom: 32px;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #d4a54a;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(212, 165, 74, 0.15);
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .detail-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .detail-item .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #5a6a80;
+      margin-bottom: 4px;
+    }
+    .detail-item .val {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #f5f0e8;
+    }
+
+    /* Market Stats */
+    .market-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-card .stat-val {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d4a54a;
+    }
+    .stat-card .stat-label {
+      font-size: 0.75rem;
+      color: #8b9ab5;
+      margin-top: 4px;
+    }
+
+    /* Sources */
+    .sources-list {
+      list-style: none;
+    }
+    .sources-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.85rem;
+      color: #8b9ab5;
+    }
+    .sources-list li a {
+      color: #d4a54a;
+      text-decoration: none;
+    }
+    .sources-list li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.75rem;
+      color: #3a4a5a;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 40px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: rgba(212, 165, 74, 0.08);
+      border: 1px solid rgba(212, 165, 74, 0.15);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 0.75rem;
+      color: #8b9ab5;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/">Jazz Party</a>
+    <a href="/home-value" class="active">Home Value</a>
+  </nav>
+
+  <header class="header">
+    <h1>Home Value</h1>
+    <p class="address">512 W Chesapeake Ave · Towson, MD 21204</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Estimate Cards -->
+    <div class="estimates">
+      <div class="estimate-card">
+        <div class="source">Redfin Estimate</div>
+        <div class="value">$791,338</div>
+        <div class="change up">▲ +$196K since purchased</div>
+        <div class="range">Range: $752K – $910K</div>
+        <div class="updated">Updated May 2026</div>
+        <a href="https://www.redfin.com/MD/Towson/512-Chesapeake-Ave-W-21204/home/11457871" target="_blank" rel="noopener">View on Redfin →</a>
+      </div>
+
+      <div class="estimate-card">
+        <div class="source">Zillow Zestimate</div>
+        <div class="value">—</div>
+        <div class="change" style="color: #5a6a80;">Pending update</div>
+        <div class="range">&nbsp;</div>
+        <div class="updated">Add Zestimate data</div>
+        <a href="https://www.zillow.com/homes/512-Chesapeake-Ave-W-Towson-MD-21204_rb/" target="_blank" rel="noopener">View on Zillow →</a>
+      </div>
+
+      <div class="estimate-card">
+        <div class="source">Tax Assessment</div>
+        <div class="value">—</div>
+        <div class="change" style="color: #5a6a80;">Pending update</div>
+        <div class="range">&nbsp;</div>
+        <div class="updated">Add SDAT data</div>
+        <a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank" rel="noopener">MD SDAT →</a>
+      </div>
+    </div>
+
+    <!-- Property Details -->
+    <div class="section">
+      <h2>Property Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <div class="label">Bedrooms</div>
+          <div class="val">4</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Bathrooms</div>
+          <div class="val">2.5</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Sq Ft</div>
+          <div class="val">2,400</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Year Built</div>
+          <div class="val">1950</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Lot Size</div>
+          <div class="val">0.23 ac</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">ZIP</div>
+          <div class="val">21204</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Local Market -->
+    <div class="section">
+      <h2>21204 Market Snapshot</h2>
+      <div class="market-stats">
+        <div class="stat-card">
+          <div class="stat-val">22</div>
+          <div class="stat-label">New Listings (May 2026)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">$266</div>
+          <div class="stat-label">Median $/Sq Ft</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">17,855</div>
+          <div class="stat-label">Listing Views</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="section">
+      <h2>Data Sources</h2>
+      <ul class="sources-list">
+        <li><a href="https://www.redfin.com/MD/Towson/512-Chesapeake-Ave-W-21204/home/11457871" target="_blank" rel="noopener">Redfin</a> — Home estimate, market data, comparable sales</li>
+        <li><a href="https://www.zillow.com/homes/512-Chesapeake-Ave-W-Towson-MD-21204_rb/" target="_blank" rel="noopener">Zillow</a> — Zestimate, tax history, neighborhood data</li>
+        <li><a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank" rel="noopener">Maryland SDAT</a> — Official tax assessment, property records</li>
+        <li><a href="https://www.realtor.com/realestateandhomes-detail/512-Chesapeake-Ave-W_Towson_MD_21204" target="_blank" rel="noopener">Realtor.com</a> — Market value estimate</li>
+      </ul>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> Home value estimates shown here are sourced from third-party platforms and are provided for informational purposes only. They are not formal appraisals. Actual market value may differ based on property condition, improvements, and market conditions. Last updated May 2026.
+    </div>
+
+    <div class="footer">
+      <p>512 W Chesapeake Ave · Towson, MD 21204 · <a href="/" style="color: #5a6a80;">512wchesapeake.com</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>
