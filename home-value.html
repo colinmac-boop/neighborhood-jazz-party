@@ -162,6 +162,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: #f5f0e8; min-height: 100vh; }
+    .bg-wallpaper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('wallpaper.jpg') center/cover no-repeat; opacity: 0.06; z-index: -1; pointer-events: none; }
 
     /* Nav */
     .nav { display: flex; justify-content: center; gap: 24px; padding: 14px 20px; background: rgba(10,10,26,0.95); border-bottom: 1px solid rgba(212,165,74,0.2); position: sticky; top: 0; z-index: 10; }
@@ -244,6 +245,7 @@
   </style>
 </head>
 <body>
+  <div class="bg-wallpaper"></div>
 
   <nav class="nav">
     <a href="/">Jazz Party</a>
@@ -266,12 +268,10 @@
       </article>
     </div>
 
-    <!-- Property Photos -->
+    <!-- Property Photo -->
     <div class="section">
-      <div class="gallery">
-        <img class="main" src="party-porch.jpg" alt="512 W Chesapeake Ave Towson MD — historic home with wraparound porch, West Towson neighborhood">
-        <img src="wallpaper.jpg" alt="512 West Chesapeake Avenue interior — original details and architectural features">
-        <img src="party-indoor.jpg" alt="512 W Chesapeake Ave — living space and entertaining area in Towson Maryland home">
+      <div style="border-radius:12px; overflow:hidden; max-height:420px;">
+        <img src="house-front.jpg" alt="512 W Chesapeake Ave Towson MD 21204 — historic 6-bedroom home with wraparound porch in West Towson, Baltimore County Maryland" style="width:100%; height:100%; object-fit:cover;">
       </div>
     </div>
 
