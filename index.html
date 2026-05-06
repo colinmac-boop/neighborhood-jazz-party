@@ -3,228 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neighborhood Jazz Party — 512 W Chesapeake Ave, Towson MD</title>
-  <meta name="description" content="Neighborhood Jazz Party at 512 W Chesapeake Ave, Towson MD 21204. West Towson & Southland Hills come together for live music. Benefiting Maryland Food Bank.">
-  <meta name="keywords" content="512 W Chesapeake, Towson MD, neighborhood jazz party, porch concert, West Towson, Southland Hills, live music Towson, Maryland Food Bank, community event Towson MD 21204">
-  <meta property="og:title" content="Neighborhood Jazz Party — 512 W Chesapeake Ave, Towson MD">
-  <meta property="og:description" content="West Towson & Southland Hills come together at 512 W Chesapeake Ave. Live Music. Benefiting Maryland Food Bank.">
+  <title>Tiki Jazz Party — July 22, 2026 — 512 W Chesapeake Ave, Towson MD</title>
+  <meta name="description" content="Neighborhood Tiki Jazz Party at 512 W Chesapeake Ave, Towson MD 21204. July 22, 2026. 50s-style Hawaiian cocktail party with live music. West Towson & Southland Hills. Benefiting Maryland Food Bank.">
+  <meta name="keywords" content="512 W Chesapeake, Towson MD, neighborhood tiki party, tiki jazz party, porch concert, West Towson, Southland Hills, live music Towson, Maryland Food Bank, community event Towson MD 21204, Hawaiian party Towson, summer party 2026">
+  <meta property="og:title" content="🌺 Tiki Jazz Party — July 22, 2026 — 512 W Chesapeake Ave">
+  <meta property="og:description" content="50s-style Hawaiian cocktail party with live jazz. West Towson & Southland Hills come together. Benefiting Maryland Food Bank.">
   <meta property="og:url" content="https://512wchesapeake.com">
   <link rel="canonical" href="https://512wchesapeake.com">
   <meta property="og:image" content="https://512wchesapeake.com/party-porch.jpg">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #0a0a1a;
+      background: #0d0a06;
       color: #f5f0e8;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .bg-wallpaper {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('wallpaper.jpg') center/cover no-repeat;
-      opacity: 0.06;
-      z-index: -1;
-      pointer-events: none;
-    }
+    /* Nav */
+    .nav { display: flex; justify-content: center; gap: 24px; padding: 14px 20px; background: rgba(13,10,6,0.95); border-bottom: 1px solid rgba(255,120,50,0.2); position: sticky; top: 0; z-index: 50; }
+    .nav a { color: #c4a882; text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s; }
+    .nav a:hover, .nav a.active { color: #ff7832; }
 
+    /* Animated Tiki Torches */
+    .torch-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+    .torch { position: absolute; bottom: 0; width: 30px; }
+    .torch-left { left: 20px; }
+    .torch-right { right: 20px; }
+    @media (max-width: 768px) { .torch { display: none; } }
+
+    .torch .pole { width: 6px; height: 120px; background: linear-gradient(to bottom, #8B5E3C, #5C3A1E); margin: 0 auto; border-radius: 3px; }
+    .flame-wrap { position: relative; width: 30px; height: 50px; margin: 0 auto -5px; }
+    .flame { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+    .flame-outer { width: 24px; height: 40px; background: radial-gradient(ellipse at center bottom, #ff6600 0%, #ff4400 40%, #cc2200 70%, transparent 100%); animation: flicker1 0.15s infinite alternate; }
+    .flame-mid { width: 16px; height: 30px; background: radial-gradient(ellipse at center bottom, #ffaa00 0%, #ff8800 50%, transparent 100%); animation: flicker2 0.12s infinite alternate; bottom: 2px; }
+    .flame-inner { width: 8px; height: 18px; background: radial-gradient(ellipse at center bottom, #ffee88 0%, #ffcc44 60%, transparent 100%); animation: flicker3 0.1s infinite alternate; bottom: 4px; }
+    .glow { position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: radial-gradient(circle, rgba(255,100,0,0.3) 0%, transparent 70%); animation: glow-pulse 2s ease-in-out infinite; }
+
+    @keyframes flicker1 { 0% { height: 40px; opacity: 1; } 100% { height: 36px; opacity: 0.9; transform: translateX(-50%) skewX(2deg); } }
+    @keyframes flicker2 { 0% { height: 30px; } 100% { height: 26px; transform: translateX(-50%) skewX(-3deg); } }
+    @keyframes flicker3 { 0% { height: 18px; } 100% { height: 14px; transform: translateX(-50%) skewX(4deg); } }
+    @keyframes glow-pulse { 0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); } 50% { opacity: 1; transform: translateX(-50%) scale(1.2); } }
+
+    /* Hero */
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0a0a1a 100%);
+      position: relative;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 70px 20px 50px;
+      background: linear-gradient(135deg, #1a0f05 0%, #2d1810 30%, #1a0f05 60%, #0d0a06 100%);
       text-align: center;
+      z-index: 2;
     }
+    .hero::before { content: ''; position: absolute; inset: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="60" opacity="0.03">🌺</text></svg>') repeat; background-size: 80px; pointer-events: none; }
+
+    .tiki-emoji { font-size: 3rem; margin-bottom: 12px; animation: sway 3s ease-in-out infinite; }
+    @keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 700;
-      color: #d4a54a;
+      font-family: 'Permanent Marker', cursive;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: #ff7832;
       letter-spacing: 2px;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+      text-shadow: 0 0 40px rgba(255,120,50,0.3);
     }
-
     .hero .subtitle {
       font-size: clamp(1rem, 2.5vw, 1.3rem);
       font-weight: 300;
-      color: #b8c4d4;
+      color: #e8c9a0;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
-
+    .hero .date-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff7832, #ff5522);
+      color: #fff;
+      font-family: 'Permanent Marker', cursive;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      padding: 10px 30px;
+      border-radius: 50px;
+      margin: 16px 0;
+      box-shadow: 0 4px 25px rgba(255,120,50,0.4);
+      letter-spacing: 1px;
+    }
     .hero .address {
       font-size: 1rem;
       font-weight: 400;
-      color: #d4a54a;
+      color: #ff7832;
       letter-spacing: 1px;
-      margin-bottom: 30px;
+      margin-bottom: 8px;
     }
+    .hero .theme-text {
+      font-size: 0.85rem;
+      color: #c4a882;
+      max-width: 500px;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+    .tiki-divider { font-size: 1.4rem; letter-spacing: 12px; color: rgba(255,120,50,0.3); margin: 20px 0; }
 
+    /* Content sections */
+    .section { position: relative; z-index: 2; }
+
+    .what-to-expect {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .what-to-expect h2 {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 1.8rem;
+      color: #ff7832;
+      margin-bottom: 20px;
+    }
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      text-align: center;
+    }
+    .expect-card {
+      background: rgba(255,120,50,0.06);
+      border: 1px solid rgba(255,120,50,0.12);
+      border-radius: 16px;
+      padding: 24px 16px;
+    }
+    .expect-card .emoji { font-size: 2rem; margin-bottom: 8px; }
+    .expect-card h3 { font-size: 1rem; font-weight: 600; color: #f5f0e8; margin-bottom: 6px; }
+    .expect-card p { font-size: 0.82rem; color: #c4a882; line-height: 1.5; }
+
+    /* Spring recap */
     .recap {
       max-width: 650px;
       margin: 0 auto;
       padding: 50px 20px;
       text-align: center;
     }
-
     .recap h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: #d4a54a;
+      font-size: 1.6rem;
+      color: #e8c9a0;
       margin-bottom: 16px;
     }
-
     .recap p {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 300;
-      color: #b8c4d4;
+      color: #a0917e;
       line-height: 1.8;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .photo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      max-width: 800px;
+      gap: 12px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 0 20px 50px;
+      padding: 0 20px 40px;
     }
-
-    @media (max-width: 600px) {
-      .photo-grid { grid-template-columns: 1fr; }
-    }
-
+    @media (max-width: 600px) { .photo-grid { grid-template-columns: 1fr; } }
     .photo-grid img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      opacity: 0.85;
     }
 
-    .next-party {
+    /* CTA */
+    .cta-section {
       text-align: center;
       padding: 50px 20px;
-      background: linear-gradient(180deg, transparent, rgba(212, 165, 74, 0.06), transparent);
+      background: linear-gradient(180deg, transparent, rgba(255,120,50,0.04), transparent);
     }
-
-    .next-party h2 {
-      font-family: 'Playfair Display', serif;
+    .cta-section h2 {
+      font-family: 'Permanent Marker', cursive;
       font-size: 1.8rem;
-      color: #d4a54a;
+      color: #ff7832;
       margin-bottom: 12px;
     }
-
-    .next-party p {
-      font-size: 1.05rem;
+    .cta-section p {
+      font-size: 1rem;
       font-weight: 300;
-      color: #b8c4d4;
-      line-height: 1.7;
-      max-width: 500px;
+      color: #c4a882;
+      max-width: 480px;
       margin: 0 auto 24px;
+      line-height: 1.7;
     }
-
     .notify-btn {
       display: inline-block;
       padding: 14px 36px;
-      background: #d4a54a;
-      color: #0a0a1a;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
+      background: linear-gradient(135deg, #ff7832, #ff5522);
+      color: #fff;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 1.1rem;
       text-decoration: none;
       border-radius: 50px;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(255,120,50,0.3);
     }
-
     .notify-btn:hover {
-      background: #e6bb5e;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(212, 165, 74, 0.3);
-      color: #0a0a1a;
+      box-shadow: 0 8px 30px rgba(255,120,50,0.5);
     }
 
+    /* Charity */
     .charity-section {
       text-align: center;
       padding: 50px 20px;
     }
-
     .charity-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: #d4a54a;
+      font-size: 1.5rem;
+      color: #e8c9a0;
       margin-bottom: 12px;
     }
-
     .charity-section p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 300;
-      color: #b8c4d4;
-      max-width: 500px;
+      color: #a0917e;
+      max-width: 480px;
       margin: 0 auto 24px;
       line-height: 1.7;
     }
-
     .donate-btn {
       display: inline-block;
       padding: 14px 40px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(212, 165, 74, 0.3);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,120,50,0.3);
       color: #f5f0e8;
-      font-family: 'Inter', sans-serif;
       font-size: 1rem;
       font-weight: 500;
       text-decoration: none;
       border-radius: 50px;
       transition: all 0.3s ease;
     }
-
     .donate-btn:hover {
-      background: rgba(212, 165, 74, 0.15);
-      border-color: rgba(212, 165, 74, 0.5);
+      background: rgba(255,120,50,0.15);
+      border-color: rgba(255,120,50,0.5);
       transform: translateY(-1px);
     }
 
+    /* Map */
     .map-section {
       padding: 0 20px 60px;
       max-width: 700px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
-
     .map-section iframe {
       width: 100%;
       height: 300px;
       border: 0;
       border-radius: 10px;
-      filter: grayscale(0.3) contrast(1.1);
+      filter: sepia(0.3) contrast(1.1);
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.25);
-      border-top: 1px solid rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255,120,50,0.08);
+      position: relative;
+      z-index: 2;
     }
-
-    footer .musical-notes {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      color: rgba(212, 165, 74, 0.2);
-      letter-spacing: 8px;
-    }
+    footer .tiki-footer { font-size: 1.2rem; margin-bottom: 8px; letter-spacing: 8px; color: rgba(255,120,50,0.2); }
   </style>
-    <!-- Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QBMP1CP4V"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -234,44 +289,99 @@
   </script>
 </head>
 <body>
-  <div class="bg-wallpaper"></div>
 
-  <nav style="display:flex;justify-content:center;gap:24px;padding:16px 20px;background:rgba(10,10,26,0.95);border-bottom:1px solid rgba(212,165,74,0.2);">
-    <a href="/" style="color:#d4a54a;text-decoration:none;font-size:0.9rem;">Jazz Party</a>
-    <a href="/home-value" style="color:#b8c4d4;text-decoration:none;font-size:0.9rem;">Home Value</a>
-    <a href="/crime-map" style="color:#b8c4d4;text-decoration:none;font-size:0.9rem;">Crime Map</a>
+  <!-- Animated Tiki Torches -->
+  <div class="torch-container">
+    <div class="torch torch-left">
+      <div class="flame-wrap">
+        <div class="glow"></div>
+        <div class="flame flame-outer"></div>
+        <div class="flame flame-mid"></div>
+        <div class="flame flame-inner"></div>
+      </div>
+      <div class="pole"></div>
+    </div>
+    <div class="torch torch-right">
+      <div class="flame-wrap">
+        <div class="glow"></div>
+        <div class="flame flame-outer"></div>
+        <div class="flame flame-mid"></div>
+        <div class="flame flame-inner"></div>
+      </div>
+      <div class="pole"></div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="/" class="active">Tiki Party</a>
+    <a href="/home-value">Home Value</a>
+    <a href="/crime-map">Crime Map</a>
   </nav>
 
-  <section class="hero">
-    <h1>Neighborhood Jazz Party</h1>
+  <section class="hero section">
+    <div class="tiki-emoji">🗿</div>
+    <h1>Tiki Jazz Party</h1>
     <p class="subtitle">West Towson &amp; Southland Hills Come Together</p>
+    <div class="date-badge">🌺 July 22, 2026 🌺</div>
     <p class="address">512 W Chesapeake Ave · Towson, MD 21204</p>
+    <p class="theme-text">A 1950s Hawaiian cocktail party on the porch. Tiki drinks, live jazz, grass skirts optional. Aloha shirts encouraged.</p>
   </section>
 
-  <section class="recap">
-    <h2>What a Night! 🎶</h2>
-    <p>We had a great party despite the rain — the porch kept us covered and the music kept us going. Live bass, guitar, and drums filled the neighborhood while we raised money for the Maryland Food Bank.</p>
-    <p>Thanks to everyone who came out and made it a night to remember.</p>
+  <div class="tiki-divider section" style="text-align:center;">🌴 🍹 🌺 🗿 🌺 🍹 🌴</div>
+
+  <section class="what-to-expect section">
+    <h2>What to Expect 🍹</h2>
+    <div class="expect-grid">
+      <div class="expect-card">
+        <div class="emoji">🎷</div>
+        <h3>Live Jazz</h3>
+        <p>Live band on the wraparound porch. Same crew that rocked the spring party — now with a tropical setlist.</p>
+      </div>
+      <div class="expect-card">
+        <div class="emoji">🍹</div>
+        <h3>Tiki Cocktails</h3>
+        <p>Mai Tais, Rum Punch, Blue Hawaiians, and non-alcoholic tropicals. Served in tiki mugs, obviously.</p>
+      </div>
+      <div class="expect-card">
+        <div class="emoji">🌺</div>
+        <h3>50s Tiki Vibes</h3>
+        <p>Tiki torches, paper lanterns, Hawaiian leis at the door. Aloha shirts and grass skirts encouraged.</p>
+      </div>
+      <div class="expect-card">
+        <div class="emoji">❤️</div>
+        <h3>For a Good Cause</h3>
+        <p>Benefiting the Maryland Food Bank. Bring your neighbors, bring your spirit, bring your appetite.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="photo-grid">
+  <section class="cta-section section">
+    <h2>Save the Date 🌴</h2>
+    <p>Wednesday, July 22, 2026. The porch. The music. The tiki torches. Don't miss it.</p>
+    <a href="mailto:party@spotvid.com?subject=Notify%20Me%20-%20Tiki%20Jazz%20Party%20July%2022&body=Put%20me%20on%20the%20list%20for%20the%20Tiki%20Jazz%20Party!" class="notify-btn">🌺 Get on the List</a>
+  </section>
+
+  <div class="tiki-divider section" style="text-align:center;">🌴 🗿 🌴</div>
+
+  <!-- Spring Party Recap -->
+  <section class="recap section">
+    <h2>Spring Party Recap 🎶</h2>
+    <p>Our spring party was a hit — rain and all. The porch kept us covered and the music kept us going. Live bass, guitar, and drums filled the neighborhood while we raised money for the Maryland Food Bank.</p>
+    <p>Thanks to everyone who made the first one unforgettable. Round two is going to be even better.</p>
+  </section>
+
+  <section class="photo-grid section">
     <img src="party-porch.jpg" alt="Jazz trio performing on the porch at 512 W Chesapeake Ave — guitar, upright bass, and drums under string lights">
     <img src="party-indoor.jpg" alt="Jazz trio performing by the fireplace — drums, guitar, and upright bass in a cozy living room setting">
   </section>
 
-  <section class="next-party">
-    <h2>Next Party — July 2026</h2>
-    <p>We're doing it again this summer. Stay tuned for the date and details. Same spot, same vibes, hopefully more sun.</p>
-    <a href="mailto:party@spotvid.com?subject=Notify%20Me%20-%20Next%20Jazz%20Party&body=Let%20me%20know%20when%20the%20next%20party%20date%20is%20set!" class="notify-btn">Get Notified ✉️</a>
-  </section>
-
-  <section class="charity-section">
+  <section class="charity-section section">
     <h2>Benefiting Maryland Food Bank</h2>
-    <p>Our spring party raised funds for the Maryland Food Bank. Donations are still welcome.</p>
+    <p>Both parties support the Maryland Food Bank. Our spring party raised funds and the summer tiki party will continue the tradition.</p>
     <a href="https://mdfoodbank.funraise.org/fundraiser/towson-spring-porch-concert" target="_blank" rel="noopener" class="donate-btn">Donate to the Food Drive</a>
   </section>
 
-  <section class="map-section">
+  <section class="map-section section">
     <iframe
       src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=512+W+Chesapeake+Ave,+Towson,+MD+21204&zoom=16"
       allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -280,8 +390,8 @@
   </section>
 
   <footer>
-    <div class="musical-notes">♪ ♫ ♪ ♫ ♪</div>
-    Bring your neighbors, bring your spirit.
+    <div class="tiki-footer">🌺 🗿 🌺 🗿 🌺</div>
+    Aloha, neighbors. See you on the porch.
   </footer>
 
 </body>
