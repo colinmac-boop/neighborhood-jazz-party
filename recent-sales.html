@@ -65,6 +65,7 @@
       "List Price",
       "Sold Price",
       "% Difference List vs Sold",
+      "Sold Price per Square Foot",
       "Days on Market"
     ]
   }
@@ -166,6 +167,7 @@
         <div class="stat"><div class="label">Sales</div><div class="val">7</div></div>
         <div class="stat"><div class="label">Median Sold</div><div class="val">$540K</div></div>
         <div class="stat"><div class="label">Range</div><div class="val">$322K–$915K</div></div>
+        <div class="stat"><div class="label">Median $/Sq Ft</div><div class="val">$280</div></div>
         <div class="stat"><div class="label">Median DOM</div><div class="val">10</div></div>
         <div class="stat"><div class="label">Avg List→Sold</div><div class="val">+0.6%</div></div>
       </div>
@@ -186,6 +188,7 @@
               <th>List Price</th>
               <th>Sold Price</th>
               <th>Diff</th>
+              <th>$/Sq Ft</th>
               <th>DOM</th>
             </tr>
           </thead>
@@ -199,6 +202,7 @@
               <td class="num">$529,000</td>
               <td class="num">$540,000</td>
               <td class="pos num">+2%</td>
+              <td class="num">$309</td>
               <td class="num">68</td>
             </tr>
             <tr>
@@ -210,6 +214,7 @@
               <td class="num">$614,900</td>
               <td class="num">$624,900</td>
               <td class="pos num">+2%</td>
+              <td class="num">$382</td>
               <td class="num">9</td>
             </tr>
             <tr>
@@ -221,6 +226,7 @@
               <td class="num">$300,000</td>
               <td class="num">$322,000</td>
               <td class="pos num">+7%</td>
+              <td class="num">$196</td>
               <td class="num">16</td>
             </tr>
             <tr>
@@ -232,6 +238,7 @@
               <td class="num">$520,000</td>
               <td class="num">$581,581</td>
               <td class="pos num">+12%</td>
+              <td class="num">$260</td>
               <td class="num">3</td>
             </tr>
             <tr>
@@ -243,6 +250,7 @@
               <td class="num">$949,900</td>
               <td class="num">$915,000</td>
               <td class="neg num">−4%</td>
+              <td class="num">$280</td>
               <td class="num">5</td>
             </tr>
             <tr>
@@ -254,6 +262,7 @@
               <td class="num">$399,900</td>
               <td class="num">$380,000</td>
               <td class="neg num">−5%</td>
+              <td class="num">$253</td>
               <td class="num">10</td>
             </tr>
             <tr>
@@ -265,10 +274,63 @@
               <td class="num">$599,000</td>
               <td class="num">$540,000</td>
               <td class="neg num">−10%</td>
+              <td class="num">$295</td>
               <td class="num">19</td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- Price per Sq Ft Chart -->
+    <div class="section">
+      <h2>Sold Price per Square Foot</h2>
+      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:18px 14px;">
+        <svg viewBox="0 0 640 260" width="100%" role="img" aria-label="Bar chart of sold price per square foot for seven recent West Towson home sales" style="display:block; max-width:100%; height:auto; font-family:'Inter',sans-serif;">
+          <!-- gridlines -->
+          <line x1="150" y1="20" x2="150" y2="215" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="260" y1="20" x2="260" y2="215" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="370" y1="20" x2="370" y2="215" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="480" y1="20" x2="480" y2="215" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <!-- axis labels -->
+          <text x="150" y="232" fill="#5a6a80" font-size="10" text-anchor="middle">$0</text>
+          <text x="260" y="232" fill="#5a6a80" font-size="10" text-anchor="middle">$100</text>
+          <text x="370" y="232" fill="#5a6a80" font-size="10" text-anchor="middle">$200</text>
+          <text x="480" y="232" fill="#5a6a80" font-size="10" text-anchor="middle">$300</text>
+          <text x="590" y="232" fill="#5a6a80" font-size="10" text-anchor="middle">$400</text>
+          <!-- median line at $280 -->
+          <line x1="458" y1="20" x2="458" y2="215" stroke="#d4a54a" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+          <text x="458" y="14" fill="#d4a54a" font-size="9" text-anchor="middle" opacity="0.9">median $280</text>
+          <!-- bars: scale 1.1px per $1, baseline x=150, bar height 18, gap 10 -->
+          <text x="144" y="39" fill="#e0dcd4" font-size="11" text-anchor="end">507 Allegheny Ave</text>
+          <rect x="150" y="26" width="420" height="18" rx="3" fill="#d4a54a" opacity="0.85"/>
+          <text x="576" y="39" fill="#f5f0e8" font-size="11" font-weight="600">$382</text>
+
+          <text x="144" y="67" fill="#e0dcd4" font-size="11" text-anchor="end">425 Woodbine Ave</text>
+          <rect x="150" y="54" width="340" height="18" rx="3" fill="#d4a54a" opacity="0.7"/>
+          <text x="496" y="67" fill="#f5f0e8" font-size="11" font-weight="600">$309</text>
+
+          <text x="144" y="95" fill="#e0dcd4" font-size="11" text-anchor="end">402 Dixie Dr</text>
+          <rect x="150" y="82" width="325" height="18" rx="3" fill="#d4a54a" opacity="0.7"/>
+          <text x="481" y="95" fill="#f5f0e8" font-size="11" font-weight="600">$295</text>
+
+          <text x="144" y="123" fill="#e0dcd4" font-size="11" text-anchor="end">613 W Chesapeake Ave</text>
+          <rect x="150" y="110" width="308" height="18" rx="3" fill="#d4a54a" opacity="0.7"/>
+          <text x="464" y="123" fill="#f5f0e8" font-size="11" font-weight="600">$280</text>
+
+          <text x="144" y="151" fill="#e0dcd4" font-size="11" text-anchor="end">607 W Chesapeake Ave</text>
+          <rect x="150" y="138" width="286" height="18" rx="3" fill="#d4a54a" opacity="0.7"/>
+          <text x="442" y="151" fill="#f5f0e8" font-size="11" font-weight="600">$260</text>
+
+          <text x="144" y="179" fill="#e0dcd4" font-size="11" text-anchor="end">571 Woodbine Ave</text>
+          <rect x="150" y="166" width="278" height="18" rx="3" fill="#d4a54a" opacity="0.7"/>
+          <text x="434" y="179" fill="#f5f0e8" font-size="11" font-weight="600">$253</text>
+
+          <text x="144" y="207" fill="#e0dcd4" font-size="11" text-anchor="end">608 Marwood Rd</text>
+          <rect x="150" y="194" width="216" height="18" rx="3" fill="#d4a54a" opacity="0.7"/>
+          <text x="372" y="207" fill="#f5f0e8" font-size="11" font-weight="600">$196</text>
+        </svg>
+        <p style="font-size:0.7rem; color:#5a6a80; margin-top:10px; text-align:center;">Sold price ÷ finished square footage. Dashed line marks the median ($280/sq ft).</p>
       </div>
     </div>
 
