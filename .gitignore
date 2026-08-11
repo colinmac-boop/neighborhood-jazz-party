@@ -10,3 +10,18 @@ Thumbs.db
 
 # Node (if ever needed)
 node_modules/
+
+# OpenClaw agent workspace (private, do not commit)
+AGENTS.md
+SOUL.md
+USER.md
+IDENTITY.md
+MEMORY.md
+TOOLS.md
+HEARTBEAT.md
+BOOTSTRAP.md
+memory/
+openclaw-workspace-state.json
+avatars/
+.openclaw/
+
