@@ -25,3 +25,7 @@ openclaw-workspace-state.json
 avatars/
 .openclaw/
 
+
+# Nova — keep only web-sized photos under nova/web/
+nova/*.jpeg
+nova/*.heic
