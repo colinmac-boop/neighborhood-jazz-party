@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova the Dog — 512 W Chesapeake Ave, Towson MD</title>
+  <meta name="description" content="Nova the Dog — resident of 512 W Chesapeake Ave in Towson MD. A drifting photo wall of a very good girl.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Nova the Dog — 512 W Chesapeake Ave">
+  <meta property="og:description" content="A drifting photo wall of Nova the Dog, resident of 512 W Chesapeake Ave.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://512wchesapeake.com/nova">
+  <meta property="og:image" content="https://512wchesapeake.com/nova/web/nova-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://512wchesapeake.com/nova">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a1a; --bg-warm: #1a1a2e; --ink: #f5f0e8; --gold: #d4a54a;
+      --muted: #b8c4d4; --dim: #5a6a80; --paper: #f8f3e8; --paper-shadow: rgba(0,0,0,0.5);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; overflow-x: hidden; }
+    .bg-wallpaper { position: fixed; inset: 0; background: url('wallpaper.jpg') center/cover no-repeat; opacity: 0.05; z-index: -2; pointer-events: none; }
+    .bg-glow { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(60% 40% at 20% 10%, rgba(212,165,74,0.08), transparent 70%),
+                  radial-gradient(50% 50% at 85% 85%, rgba(140,100,200,0.08), transparent 70%); }
+    .nav { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; padding: 14px 20px; background: rgba(10,10,26,0.95); border-bottom: 1px solid rgba(212,165,74,0.2); position: sticky; top: 0; z-index: 50; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s; }
+    .nav a:hover, .nav a.active { color: var(--gold); }
+    .header { text-align: center; padding: 48px 20px 24px; background: linear-gradient(135deg, var(--bg) 0%, var(--bg-warm) 50%, var(--bg) 100%); position: relative; }
+    .header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 3.6rem); color: var(--gold); margin-bottom: 6px; letter-spacing: 0.5px; }
+    .header .subtitle { font-family: 'Caveat', cursive; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--ink); opacity: 0.85; }
+    .header .address { font-size: 0.78rem; color: var(--dim); margin-top: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .paw-strip { margin-top: 16px; display: flex; justify-content: center; gap: 18px; opacity: 0.45; }
+    .wall { position: relative; width: 100%; padding: 40px 0 56px; overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); }
+    .row { display: flex; width: max-content; gap: 28px; padding: 18px 14px; will-change: transform; animation: drift var(--dur, 60s) linear infinite; }
+    .row.reverse { animation-direction: reverse; }
+    @keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+    .card { flex: 0 0 auto; width: 210px; background: var(--paper); padding: 12px 12px 36px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 14px 28px var(--paper-shadow), 0 0 0 1px rgba(255,255,255,0.04);
+      transform: rotate(var(--tilt, 0deg));
+      transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s;
+      cursor: pointer; position: relative; }
+    .card:hover { transform: rotate(0deg) scale(1.08) translateY(-6px); z-index: 5;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 22px 46px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,165,74,0.35); }
+    .card .photo { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; background: #2a2a40; }
+    .card .caption { font-family: 'Caveat', cursive; font-size: 1.2rem; color: #333; text-align: center; padding: 10px 4px 0; line-height: 1.1; }
+    .card.tape::before { content: ''; position: absolute; top: -8px; left: 50%; width: 60px; height: 20px;
+      transform: translateX(-50%) rotate(-3deg); background: rgba(220,210,180,0.55);
+      border-left: 1px dashed rgba(0,0,0,0.08); border-right: 1px dashed rgba(0,0,0,0.08);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .hero-portrait { max-width: 320px; margin: 24px auto 8px; display: block; position: relative; }
+    .hero-portrait img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: center 35%; border-radius: 50%;
+      border: 4px solid var(--paper); box-shadow: 0 10px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,165,74,0.3); }
+    .hero-portrait::after { content: '🐾'; position: absolute; top: -4px; right: 14px; font-size: 2rem;
+      transform: rotate(18deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
+    .about { max-width: 680px; margin: 24px auto 8px; padding: 0 24px; text-align: center; font-size: 1.02rem; color: var(--muted); line-height: 1.7; }
+    .about em { font-family: 'Caveat', cursive; font-style: normal; color: var(--gold); font-size: 1.3rem; }
+    .facts { max-width: 720px; margin: 20px auto 0; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+    .fact { background: rgba(255,255,255,0.03); border: 1px solid rgba(212,165,74,0.15); border-radius: 12px; padding: 12px 10px; text-align: center; }
+    .fact .label { font-size: 0.65rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
+    .fact .val { font-size: 1.05rem; color: var(--ink); font-weight: 500; margin-top: 2px; }
+    .footer { text-align: center; padding: 28px 20px 40px; font-size: 0.72rem; color: var(--dim); border-top: 1px solid rgba(255,255,255,0.04); margin-top: 40px; }
+    .footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer .tiny { font-size: 0.62rem; color: #3a4a5a; margin-top: 6px; }
+    .lightbox { position: fixed; inset: 0; background: rgba(5,5,15,0.92); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; backdrop-filter: blur(8px); }
+    .lightbox.open { display: flex; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .lightbox-inner { background: var(--paper); padding: 20px 20px 50px; max-width: min(90vw, 560px); box-shadow: 0 30px 80px rgba(0,0,0,0.7); transform: rotate(-1deg); position: relative; }
+    .lightbox-inner img { width: 100%; height: auto; display: block; }
+    .lightbox-inner .caption { font-family: 'Caveat', cursive; font-size: 1.6rem; color: #222; text-align: center; margin-top: 16px; }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--paper); font-size: 2rem; cursor: pointer; padding: 10px; font-weight: 300; line-height: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      .row { animation: none; transform: translate3d(0,0,0); }
+      .card { transition: none; }
+      .lightbox { animation: none; }
+    }
+    @media (max-width: 600px) {
+      .card { width: 160px; padding: 10px 10px 30px; }
+      .card .caption { font-size: 1.05rem; }
+      .header { padding: 32px 16px 20px; }
+      .hero-portrait { max-width: 240px; }
+      .about { font-size: 0.95rem; padding: 0 18px; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QBMP1CP4V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7QBMP1CP4V');
+  </script>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="paw" viewBox="0 0 100 100">
+        <g fill="currentColor">
+          <ellipse cx="50" cy="65" rx="22" ry="20"/>
+          <ellipse cx="25" cy="35" rx="9" ry="12"/>
+          <ellipse cx="42" cy="22" rx="8" ry="11"/>
+          <ellipse cx="58" cy="22" rx="8" ry="11"/>
+          <ellipse cx="75" cy="35" rx="9" ry="12"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+</head>
+<body>
+  <div class="bg-wallpaper"></div>
+  <div class="bg-glow"></div>
+
+  <nav class="nav">
+    <a href="/home-value">Home Value</a>
+    <a href="/recent-sales">Recent Sales</a>
+    <a href="/crime-map">Crime Map</a>
+    <a href="/nova" class="active">Nova the Dog 🐾</a>
+    <a href="/homestoop">HomeStoop</a>
+  </nav>
+
+  <header class="header">
+    <h1>Nova the Dog</h1>
+    <p class="subtitle">resident good girl · 512 W Chesapeake Ave</p>
+    <div class="hero-portrait">
+      <img src="/nova/web/nova-hero.jpg" alt="Nova the Dog, a black lab resting her head on a cozy fleece blanket">
+    </div>
+    <p class="address">Towson, MD 21204 · West Towson</p>
+    <div class="paw-strip" aria-hidden="true">
+      <svg width="22" height="22" style="color: var(--gold);"><use href="#paw"/></svg>
+      <svg width="22" height="22" style="color: var(--gold);"><use href="#paw"/></svg>
+      <svg width="22" height="22" style="color: var(--gold);"><use href="#paw"/></svg>
+      <svg width="22" height="22" style="color: var(--gold);"><use href="#paw"/></svg>
+    </div>
+  </header>
+
+  <section class="about">
+    <p><em>This is Nova the Dog.</em> She lives at 512 W Chesapeake, keeps the porch under surveillance, accepts peanut butter in small ceremonial cups, and is a confirmed attendee of the neighborhood jazz party. Below: a drifting wall of her finest moments.</p>
+  </section>
+
+  <div class="facts" aria-label="Nova the Dog — facts">
+    <div class="fact"><div class="label">Role</div><div class="val">Head of Porch</div></div>
+    <div class="fact"><div class="label">Hobbies</div><div class="val">Peanut Butter</div></div>
+    <div class="fact"><div class="label">Favorite Spot</div><div class="val">The Stoop</div></div>
+    <div class="fact"><div class="label">Reviews</div><div class="val">★★★★★</div></div>
+  </div>
+
+  <section class="wall" aria-label="Photo collage of Nova the Dog">
+    <div class="row reverse" style="--dur: 92s;">
+          <div class="card tape" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-01.jpg" alt="Nova pressing her nose into the camera at a sidewalk cafe" loading="lazy" decoding="async">
+            <div class="caption">nose to camera</div>
+          </div>
+          <div class="card" style="--tilt: 1deg;">
+            <img class="photo" src="/nova/web/nova-04.jpg" alt="Close-up of Nova resting her head on a knee" loading="lazy" decoding="async">
+            <div class="caption">tell me more</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-07.jpg" alt="Nova with a slightly guilty look, leash visible" loading="lazy" decoding="async">
+            <div class="caption">yes i saw the leash</div>
+          </div>
+          <div class="card tape" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-10.jpg" alt="Nova offering a paw into a human hand" loading="lazy" decoding="async">
+            <div class="caption">shake on it</div>
+          </div>
+          <div class="card" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-13.jpg" alt="Black-and-white: Nova drinking from a paper cup" loading="lazy" decoding="async">
+            <div class="caption">noir peanut butter</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-16.jpg" alt="Four dogs sitting on training boxes at a daycare park, Nova on the left" loading="lazy" decoding="async">
+            <div class="caption">podium training</div>
+          </div>
+          <div class="card tape" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-20.jpg" alt="Nova sitting in front of a decorated Christmas tree" loading="lazy" decoding="async">
+            <div class="caption">santa paws</div>
+          </div>
+          <div class="card" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-23.jpg" alt="Nova and her human's shadow stretched long across a parking lot at sunset" loading="lazy" decoding="async">
+            <div class="caption">two of us</div>
+          </div>
+          <div class="card" style="--tilt: 4deg;">
+            <img class="photo" src="/nova/web/nova-26.jpg" alt="Nova investigating the top of a stone bridge wall" loading="lazy" decoding="async">
+            <div class="caption">bridge inspector</div>
+          </div>
+          <div class="card tape" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-29.jpg" alt="Black-and-white close-up of Nova's face resting between her paws" loading="lazy" decoding="async">
+            <div class="caption">paws and eyes</div>
+          </div>
+          <div class="card tape" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-01.jpg" alt="Nova pressing her nose into the camera at a sidewalk cafe" loading="lazy" decoding="async">
+            <div class="caption">nose to camera</div>
+          </div>
+          <div class="card" style="--tilt: 1deg;">
+            <img class="photo" src="/nova/web/nova-04.jpg" alt="Close-up of Nova resting her head on a knee" loading="lazy" decoding="async">
+            <div class="caption">tell me more</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-07.jpg" alt="Nova with a slightly guilty look, leash visible" loading="lazy" decoding="async">
+            <div class="caption">yes i saw the leash</div>
+          </div>
+          <div class="card tape" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-10.jpg" alt="Nova offering a paw into a human hand" loading="lazy" decoding="async">
+            <div class="caption">shake on it</div>
+          </div>
+          <div class="card" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-13.jpg" alt="Black-and-white: Nova drinking from a paper cup" loading="lazy" decoding="async">
+            <div class="caption">noir peanut butter</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-16.jpg" alt="Four dogs sitting on training boxes at a daycare park, Nova on the left" loading="lazy" decoding="async">
+            <div class="caption">podium training</div>
+          </div>
+          <div class="card tape" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-20.jpg" alt="Nova sitting in front of a decorated Christmas tree" loading="lazy" decoding="async">
+            <div class="caption">santa paws</div>
+          </div>
+          <div class="card" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-23.jpg" alt="Nova and her human's shadow stretched long across a parking lot at sunset" loading="lazy" decoding="async">
+            <div class="caption">two of us</div>
+          </div>
+          <div class="card" style="--tilt: 4deg;">
+            <img class="photo" src="/nova/web/nova-26.jpg" alt="Nova investigating the top of a stone bridge wall" loading="lazy" decoding="async">
+            <div class="caption">bridge inspector</div>
+          </div>
+          <div class="card tape" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-29.jpg" alt="Black-and-white close-up of Nova's face resting between her paws" loading="lazy" decoding="async">
+            <div class="caption">paws and eyes</div>
+          </div></div>
+    <div class="row" style="--dur: 72s;">
+          <div class="card tape" style="--tilt: -4deg;">
+            <img class="photo" src="/nova/web/nova-02.jpg" alt="Nova sitting politely on a coffee shop floor" loading="lazy" decoding="async">
+            <div class="caption">coffee shop sit</div>
+          </div>
+          <div class="card" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-05.jpg" alt="Nova tracking something above her in a cafe" loading="lazy" decoding="async">
+            <div class="caption">treat trajectory</div>
+          </div>
+          <div class="card" style="--tilt: 1deg;">
+            <img class="photo" src="/nova/web/nova-08.jpg" alt="Nova sprawled across a hotel bed" loading="lazy" decoding="async">
+            <div class="caption">hotel review: 5 stars</div>
+          </div>
+          <div class="card tape" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-11.jpg" alt="Nova drinking from a paper cup of peanut butter" loading="lazy" decoding="async">
+            <div class="caption">peanut butter forever</div>
+          </div>
+          <div class="card" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-14.jpg" alt="Nova in a pink harness in front of a beach backdrop with surfboards and gnomes" loading="lazy" decoding="async">
+            <div class="caption">beach day (indoors)</div>
+          </div>
+          <div class="card" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-17.jpg" alt="Nova with a pack of other dogs around a fire pit at daycare" loading="lazy" decoding="async">
+            <div class="caption">daycare crew</div>
+          </div>
+          <div class="card tape" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-21.jpg" alt="Nova sitting in front of a colorful Be Kind Be Brave backdrop with children's books" loading="lazy" decoding="async">
+            <div class="caption">be kind, be brave</div>
+          </div>
+          <div class="card" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-24.jpg" alt="Nova placing a paw on Colin's hat for a selfie on the couch" loading="lazy" decoding="async">
+            <div class="caption">paw on dad</div>
+          </div>
+          <div class="card" style="--tilt: -2deg;">
+            <img class="photo" src="/nova/web/nova-27.jpg" alt="Nova in red-white-blue lei and red harness at a beach photo setup" loading="lazy" decoding="async">
+            <div class="caption">fourth of july</div>
+          </div>
+          <div class="card tape" style="--tilt: 4deg;">
+            <img class="photo" src="/nova/web/nova-30.jpg" alt="Nova sitting in a field of yellow black-eyed Susan wildflowers" loading="lazy" decoding="async">
+            <div class="caption">black-eyed susans</div>
+          </div>
+          <div class="card tape" style="--tilt: -4deg;">
+            <img class="photo" src="/nova/web/nova-02.jpg" alt="Nova sitting politely on a coffee shop floor" loading="lazy" decoding="async">
+            <div class="caption">coffee shop sit</div>
+          </div>
+          <div class="card" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-05.jpg" alt="Nova tracking something above her in a cafe" loading="lazy" decoding="async">
+            <div class="caption">treat trajectory</div>
+          </div>
+          <div class="card" style="--tilt: 1deg;">
+            <img class="photo" src="/nova/web/nova-08.jpg" alt="Nova sprawled across a hotel bed" loading="lazy" decoding="async">
+            <div class="caption">hotel review: 5 stars</div>
+          </div>
+          <div class="card tape" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-11.jpg" alt="Nova drinking from a paper cup of peanut butter" loading="lazy" decoding="async">
+            <div class="caption">peanut butter forever</div>
+          </div>
+          <div class="card" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-14.jpg" alt="Nova in a pink harness in front of a beach backdrop with surfboards and gnomes" loading="lazy" decoding="async">
+            <div class="caption">beach day (indoors)</div>
+          </div>
+          <div class="card" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-17.jpg" alt="Nova with a pack of other dogs around a fire pit at daycare" loading="lazy" decoding="async">
+            <div class="caption">daycare crew</div>
+          </div>
+          <div class="card tape" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-21.jpg" alt="Nova sitting in front of a colorful Be Kind Be Brave backdrop with children's books" loading="lazy" decoding="async">
+            <div class="caption">be kind, be brave</div>
+          </div>
+          <div class="card" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-24.jpg" alt="Nova placing a paw on Colin's hat for a selfie on the couch" loading="lazy" decoding="async">
+            <div class="caption">paw on dad</div>
+          </div>
+          <div class="card" style="--tilt: -2deg;">
+            <img class="photo" src="/nova/web/nova-27.jpg" alt="Nova in red-white-blue lei and red harness at a beach photo setup" loading="lazy" decoding="async">
+            <div class="caption">fourth of july</div>
+          </div>
+          <div class="card tape" style="--tilt: 4deg;">
+            <img class="photo" src="/nova/web/nova-30.jpg" alt="Nova sitting in a field of yellow black-eyed Susan wildflowers" loading="lazy" decoding="async">
+            <div class="caption">black-eyed susans</div>
+          </div></div>
+    <div class="row reverse" style="--dur: 108s;">
+          <div class="card tape" style="--tilt: 1deg;">
+            <img class="photo" src="/nova/web/nova-03.jpg" alt="Nova curled up on a dog bed holding a fluffy sheep toy" loading="lazy" decoding="async">
+            <div class="caption">with the sheep</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-06.jpg" alt="Nova eyeing a cup of peanut butter, head tilted" loading="lazy" decoding="async">
+            <div class="caption">is that mine?</div>
+          </div>
+          <div class="card" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-09.jpg" alt="Nova resting her head on a fleece blanket" loading="lazy" decoding="async">
+            <div class="caption">nap #847</div>
+          </div>
+          <div class="card tape" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-12.jpg" alt="Nova on a Towson sidewalk, looking up, tongue out" loading="lazy" decoding="async">
+            <div class="caption">street report</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-15.jpg" alt="Selfie of Colin and Nova on a couch, both looking at the camera" loading="lazy" decoding="async">
+            <div class="caption">with dad</div>
+          </div>
+          <div class="card" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-19.jpg" alt="Black-and-white side profile of Nova in soft light" loading="lazy" decoding="async">
+            <div class="caption">profile piece</div>
+          </div>
+          <div class="card tape" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-22.jpg" alt="Nova watching a cup of yogurt with a treat on top" loading="lazy" decoding="async">
+            <div class="caption">frozen yogurt theory</div>
+          </div>
+          <div class="card" style="--tilt: 4deg;">
+            <img class="photo" src="/nova/web/nova-25.jpg" alt="Black-and-white: Nova resting her head on a couch cushion" loading="lazy" decoding="async">
+            <div class="caption">couch noir</div>
+          </div>
+          <div class="card" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-28.jpg" alt="Nova in red harness on a couch with a treat in front of her paws" loading="lazy" decoding="async">
+            <div class="caption">treat in evidence</div>
+          </div>
+          <div class="card tape" style="--tilt: -2deg;">
+            <img class="photo" src="/nova/web/nova-31.jpg" alt="Nova in tall green grass on a sunny neighborhood path" loading="lazy" decoding="async">
+            <div class="caption">sunday walk</div>
+          </div>
+          <div class="card tape" style="--tilt: 1deg;">
+            <img class="photo" src="/nova/web/nova-03.jpg" alt="Nova curled up on a dog bed holding a fluffy sheep toy" loading="lazy" decoding="async">
+            <div class="caption">with the sheep</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-06.jpg" alt="Nova eyeing a cup of peanut butter, head tilted" loading="lazy" decoding="async">
+            <div class="caption">is that mine?</div>
+          </div>
+          <div class="card" style="--tilt: -5deg;">
+            <img class="photo" src="/nova/web/nova-09.jpg" alt="Nova resting her head on a fleece blanket" loading="lazy" decoding="async">
+            <div class="caption">nap #847</div>
+          </div>
+          <div class="card tape" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-12.jpg" alt="Nova on a Towson sidewalk, looking up, tongue out" loading="lazy" decoding="async">
+            <div class="caption">street report</div>
+          </div>
+          <div class="card" style="--tilt: 0deg;">
+            <img class="photo" src="/nova/web/nova-15.jpg" alt="Selfie of Colin and Nova on a couch, both looking at the camera" loading="lazy" decoding="async">
+            <div class="caption">with dad</div>
+          </div>
+          <div class="card" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-19.jpg" alt="Black-and-white side profile of Nova in soft light" loading="lazy" decoding="async">
+            <div class="caption">profile piece</div>
+          </div>
+          <div class="card tape" style="--tilt: 5deg;">
+            <img class="photo" src="/nova/web/nova-22.jpg" alt="Nova watching a cup of yogurt with a treat on top" loading="lazy" decoding="async">
+            <div class="caption">frozen yogurt theory</div>
+          </div>
+          <div class="card" style="--tilt: 4deg;">
+            <img class="photo" src="/nova/web/nova-25.jpg" alt="Black-and-white: Nova resting her head on a couch cushion" loading="lazy" decoding="async">
+            <div class="caption">couch noir</div>
+          </div>
+          <div class="card" style="--tilt: -1deg;">
+            <img class="photo" src="/nova/web/nova-28.jpg" alt="Nova in red harness on a couch with a treat in front of her paws" loading="lazy" decoding="async">
+            <div class="caption">treat in evidence</div>
+          </div>
+          <div class="card tape" style="--tilt: -2deg;">
+            <img class="photo" src="/nova/web/nova-31.jpg" alt="Nova in tall green grass on a sunny neighborhood path" loading="lazy" decoding="async">
+            <div class="caption">sunday walk</div>
+          </div></div>
+  </section>
+
+  <div class="about" style="margin-top: 8px;">
+    <p style="font-size: 0.85rem; color: var(--dim);">Click any photo to enlarge. The wall pauses for you if your device prefers reduced motion.</p>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo of Nova the Dog">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-photo" src="" alt="">
+      <div class="caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>512 W Chesapeake Ave · Towson, MD 21204 · <a href="/">512wchesapeake.com</a></p>
+    <p class="tiny">Nova the Dog is unavailable for comment but accepts biscuits and ear scratches.</p>
+  </footer>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbPhoto = document.getElementById('lightbox-photo');
+    const lbCaption = document.getElementById('lightbox-caption');
+    const lbClose = document.getElementById('lightbox-close');
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img.photo');
+        lbPhoto.src = img.src;
+        lbPhoto.alt = img.alt;
+        lbCaption.textContent = card.querySelector('.caption').textContent;
+        lb.classList.add('open');
+      });
+    });
+    function closeLB() { lb.classList.remove('open'); lbPhoto.src = ''; }
+    lbClose.addEventListener('click', closeLB);
+    lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+  </script>
+</body>
+</html>
