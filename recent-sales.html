@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recent Home Sales near 512 W Chesapeake Ave — Towson MD 21204</title>
-  <meta name="description" content="Recent West Towson home-sale comps near 512 W Chesapeake Ave, Towson MD 21204. Eight Feb–Aug 2026 sales, $540K–$825K, with DOM and $/sq ft. Source: Cummings & Co. Realtors via Bright MLS.">
-  <meta name="keywords" content="West Towson recent sales, 512 W Chesapeake Ave comps, Towson MD home sales 21204, West Towson sold homes 2026, Towson real estate comparables, 21204 sales comps, Chesapeake Ave Towson sold, Bright MLS West Towson, neighborhood sales report Towson, Cummings Co Realtors Towson">
+  <title>Recent Home Sales near 512 W Chesapeake Ave — West Towson MD 21204</title>
+  <meta name="description" content="Recent sales comps near 512 W Chesapeake Ave, Towson MD 21204. Ten West Towson homes sold between Nov 2025 and Jun 2026, ranging $322K–$915K. Sold prices, list prices, beds/baths, days on market.">
+  <meta name="keywords" content="West Towson recent sales, 512 W Chesapeake Ave comps, Towson MD home sales 21204, West Towson sold homes 2026, Towson real estate comparables, 21204 sales comps, Chesapeake Ave Towson sold, Bright MLS West Towson, neighborhood sales report Towson">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="author" content="512wchesapeake.com">
   <meta name="geo.region" content="US-MD">
@@ -13,7 +13,7 @@
   <meta name="geo.position" content="39.4015;-76.6244">
   <meta name="ICBM" content="39.4015, -76.6244">
   <meta property="og:title" content="Recent Sales near 512 W Chesapeake Ave — West Towson MD">
-  <meta property="og:description" content="Eight West Towson homes sold Feb–Aug 2026. Sold prices $540K–$825K. Source: Cummings & Co. Realtors via Bright MLS.">
+  <meta property="og:description" content="Ten West Towson homes sold Nov 2025–Jun 2026. Sold prices $322K–$915K. Source: Bright MLS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://512wchesapeake.com/recent-sales">
   <meta property="og:image" content="https://512wchesapeake.com/party-porch.jpg">
@@ -22,7 +22,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Recent Sales near 512 W Chesapeake Ave — West Towson">
-  <meta name="twitter:description" content="Eight West Towson homes sold Feb–Aug 2026. Comp data via Cummings & Co. Realtors / Bright MLS.">
+  <meta name="twitter:description" content="Ten West Towson homes sold Nov 2025–Jun 2026. Comp data sourced from Bright MLS.">
   <meta name="twitter:image" content="https://512wchesapeake.com/party-porch.jpg">
   <link rel="canonical" href="https://512wchesapeake.com/recent-sales">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -49,12 +49,11 @@
     "@context": "https://schema.org",
     "@type": "Dataset",
     "name": "Recent Home Sales — West Towson, MD 21204",
-    "description": "Eight most recent West Towson home sales between 02/28/2026 and 08/28/2026, sourced from Bright MLS and compiled by Cummings & Co. Realtors. Reference comps for 512 W Chesapeake Ave.",
+    "description": "Ten most recent West Towson home sales between 11/05/2025 and 06/22/2026, sourced from Bright MLS via RSPusa.com and Team Bassett (team-bassett.com) market reports. Reference comps for 512 W Chesapeake Ave.",
     "url": "https://512wchesapeake.com/recent-sales",
-    "creator": { "@type": "Organization", "name": "Cummings & Co. Realtors", "url": "https://www.cummingsrealtors.com/" },
-    "publisher": { "@type": "Organization", "name": "512wchesapeake.com" },
+    "creator": { "@type": "Organization", "name": "512wchesapeake.com" },
     "spatialCoverage": { "@type": "Place", "name": "West Towson, Towson, MD 21204" },
-    "temporalCoverage": "2026-02-28/2026-08-28",
+    "temporalCoverage": "2025-11-05/2026-06-22",
     "license": "Sourced from Bright MLS public records. For informational use only.",
     "variableMeasured": [
       "Address",
@@ -66,7 +65,6 @@
       "List Price",
       "Sold Price",
       "% Difference List vs Sold",
-      "Sold Price per Square Foot",
       "Days on Market"
     ]
   }
@@ -107,7 +105,6 @@
     .sales-table .pos { color: #4ade80; font-weight: 600; }
     .sales-table .neg { color: #f87171; font-weight: 600; }
     .sales-table .neutral { color: #b8c4d4; }
-    .sales-table tr.highlight td { background: rgba(212,165,74,0.08); }
 
     /* Stats Grid */
     .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
@@ -115,14 +112,11 @@
     .stat .label { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #5a6a80; margin-bottom: 3px; }
     .stat .val { font-size: 1.2rem; font-weight: 600; color: #f5f0e8; }
 
-    /* Source card */
-    .source-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(212,165,74,0.18); border-radius: 12px; padding: 16px 18px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: baseline; font-size: 0.82rem; color: #d0d4dc; }
-    .source-card .who { font-weight: 600; color: #d4a54a; font-size: 0.95rem; }
-    .source-card .role { color: #8a94a4; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.6px; margin-left: 6px; }
-    .source-card .field { color: #b8c4d4; }
-    .source-card .field strong { color: #f5f0e8; font-weight: 500; }
-    .source-card a { color: #d4a54a; text-decoration: none; border-bottom: 1px solid rgba(212,165,74,0.3); }
-    .source-card a:hover { border-bottom-color: #d4a54a; }
+    /* Sales Chart */
+    .chart-wrap { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 12px 8px; }
+    .chart-wrap svg .pt circle:first-child { transition: r 0.15s ease; }
+    .chart-wrap svg .pt:hover circle:first-child { r: 7; fill: #f0c060; }
+    .chart-note { font-size: 0.68rem; color: #5a6a80; text-align: center; padding: 6px 0 4px; }
 
     /* Disclaimer */
     .disclaimer { background: rgba(212,165,74,0.06); border: 1px solid rgba(212,165,74,0.12); border-radius: 10px; padding: 14px; font-size: 0.7rem; color: #6a7a8a; line-height: 1.6; }
@@ -153,18 +147,19 @@
   <nav class="nav">
     <a href="/home-value">Home Value</a>
     <a href="/recent-sales" class="active">Recent Sales</a>
+    <a href="/property-taxes">Property Taxes</a>
     <a href="/schools">Schools</a>
     <a href="/dining">Dining &amp; Library</a>
     <a href="/courthouses">Courthouses</a>
     <a href="/crime-map">Crime Map</a>
-    <a href="/property-taxes">Property Taxes</a>
+    <a href="/novathedog">Nova 🐾</a>
     <a href="/homestoop">HomeStoop</a>
   </nav>
 
   <header class="header">
     <h1>Recent Sales — West Towson</h1>
     <p class="address">Comparable home sales near 512 W Chesapeake Ave · Towson, MD 21204</p>
-    <p class="tagline">Bright MLS · Feb – Aug 2026</p>
+    <p class="tagline">Bright MLS · Nov 2025 – Jun 2026</p>
   </header>
 
   <div class="container">
@@ -172,44 +167,176 @@
     <!-- Intro -->
     <div class="section">
       <article style="font-size:0.85rem; color:#b8c4d4; line-height:1.7;">
-        <p>The eight most recent West Towson home sales between <strong>February 28, 2026</strong> and <strong>August 28, 2026</strong> — the best near-term indicator of changing property values around <strong>512 W Chesapeake Ave</strong>. Data compiled by Cummings &amp; Co. Realtors from Bright MLS.</p>
+        <p>The ten most recent West Towson home sales between <strong>November 5, 2025</strong> and <strong>June 22, 2026</strong> — the best near-term indicator of changing property values around <strong>512 W Chesapeake Ave</strong>. Data sourced from Bright MLS via RSPusa.com and Team Bassett (team-bassett.com) market reports.</p>
       </article>
-    </div>
-
-    <!-- Source -->
-    <div class="section">
-      <div class="source-card">
-        <div>
-          <span class="who">Meg Weetenkamp</span><span class="role">REALTOR®</span><br>
-          <span class="field">Cummings &amp; Co. Realtors</span>
-        </div>
-        <div class="field">1515 La Belle Ave Suite 5<br>Ruxton, MD 21204</div>
-        <div class="field">
-          Cell: <a href="tel:+14102740004">(410) 274-0004</a><br>
-          Office: <a href="tel:+14108230033">(410) 823-0033</a>
-        </div>
-        <div class="field">
-          <a href="mailto:meg@bmorere.com">meg@bmorere.com</a><br>
-          <span style="color:#5a6a80; font-size:0.7rem;">Licensed: MD, DE, DC, PA, VA, MA</span>
-        </div>
-      </div>
     </div>
 
     <!-- Snapshot Stats -->
     <div class="section">
       <div class="stats">
-        <div class="stat"><div class="label">Sales</div><div class="val">8</div></div>
-        <div class="stat"><div class="label">Median Sold</div><div class="val">$617K</div></div>
-        <div class="stat"><div class="label">Range</div><div class="val">$540K–$825K</div></div>
-        <div class="stat"><div class="label">Median $/Sq Ft</div><div class="val">$289</div></div>
-        <div class="stat"><div class="label">Median DOM</div><div class="val">12</div></div>
-        <div class="stat"><div class="label">Avg List→Sold</div><div class="val">+0.9%</div></div>
+        <div class="stat"><div class="label">Sales</div><div class="val">10</div></div>
+        <div class="stat"><div class="label">Median Sold</div><div class="val">$567K</div></div>
+        <div class="stat"><div class="label">Range</div><div class="val">$322K–$915K</div></div>
+        <div class="stat"><div class="label">Median DOM</div><div class="val">11</div></div>
+        <div class="stat"><div class="label">Avg List→Sold</div><div class="val">+0.6%</div></div>
+      </div>
+    </div>
+
+    <!-- Sales Chart -->
+    <div class="section">
+      <h2>Price Trends — Sold Price &amp; $/Sq Ft Over Time</h2>
+      <div class="chart-wrap">
+<svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="West Towson home sales chart: sold price and price per square foot over time, November 2025 to June 2026" style="width:100%;height:auto;display:block;">
+  <!-- panel divider -->
+  <line x1="64" y1="268.0" x2="860" y2="268.0" stroke="rgba(212,165,74,0.12)" stroke-width="1"/>
+  <!-- x axis baseline -->
+  <line x1="64" y1="516" x2="860" y2="516" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <line x1="64" y1="248.0" x2="860" y2="248.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="251.0" fill="#5a6a80" font-size="10" text-anchor="end">$233K</text>
+<line x1="64" y1="191.0" x2="860" y2="191.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="194.0" fill="#5a6a80" font-size="10" text-anchor="end">$426K</text>
+<line x1="64" y1="134.0" x2="860" y2="134.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="137.0" fill="#5a6a80" font-size="10" text-anchor="end">$618K</text>
+<line x1="64" y1="77.0" x2="860" y2="77.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="80.0" fill="#5a6a80" font-size="10" text-anchor="end">$811K</text>
+<line x1="64" y1="20.0" x2="860" y2="20.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="23.0" fill="#5a6a80" font-size="10" text-anchor="end">$1004K</text>
+<text x="64" y="34" fill="#d4a54a" font-size="11" font-weight="600" letter-spacing="1">SOLD PRICE</text>
+<polyline points="64.0,157.2 84.9,204.5 88.3,144.9 88.3,46.3 95.3,221.7 557.6,132.1 575.0,157.2 727.9,136.5 769.6,89.9 860.0,153.5" fill="none" stroke="rgba(212,165,74,0.35)" stroke-width="1.5"/>
+<g class="pt">
+  <circle cx="64.0" cy="157.2" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="64.0" cy="157.2" r="12" fill="transparent"/>
+  <title>402 Dixie Dr · 11/05/25 · Sold $540,000 · 1,830 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="84.9" cy="204.5" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="84.9" cy="204.5" r="12" fill="transparent"/>
+  <title>571 Woodbine Ave · 11/11/25 · Sold $380,000 · 1,500 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="88.3" cy="144.9" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="88.3" cy="144.9" r="12" fill="transparent"/>
+  <title>607 W Chesapeake Ave · 11/12/25 · Sold $581,581 · 2,240 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="88.3" cy="46.3" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="88.3" cy="46.3" r="12" fill="transparent"/>
+  <title>613 W Chesapeake Ave · 11/12/25 · Sold $915,000 · 3,268 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="95.3" cy="221.7" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="95.3" cy="221.7" r="12" fill="transparent"/>
+  <title>608 Marwood Rd · 11/14/25 · Sold $322,000 · 1,642 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="557.6" cy="132.1" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="557.6" cy="132.1" r="12" fill="transparent"/>
+  <title>507 Allegheny Ave · 03/27/26 · Sold $624,900 · 1,638 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="575.0" cy="157.2" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="575.0" cy="157.2" r="12" fill="transparent"/>
+  <title>425 Woodbine Ave · 04/01/26 · Sold $540,000 · 1,748 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="727.9" cy="136.5" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="727.9" cy="136.5" r="12" fill="transparent"/>
+  <title>715 Morningside Dr · 05/15/26 · Sold $610,000 · 2,256 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="769.6" cy="89.9" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="769.6" cy="89.9" r="12" fill="transparent"/>
+  <title>612 W Chesapeake Ave · 05/27/26 · Sold $767,500 · 3,174 sqft</title>
+</g>
+<g class="pt">
+  <circle cx="860.0" cy="153.5" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="860.0" cy="153.5" r="12" fill="transparent"/>
+  <title>418 Range Rd · 06/22/26 · Sold $552,500 · 1,801 sqft</title>
+</g>
+  <line x1="64" y1="516.0" x2="860" y2="516.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="519.0" fill="#5a6a80" font-size="10" text-anchor="end">$168</text>
+<line x1="64" y1="459.0" x2="860" y2="459.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="462.0" fill="#5a6a80" font-size="10" text-anchor="end">$229</text>
+<line x1="64" y1="402.0" x2="860" y2="402.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="405.0" fill="#5a6a80" font-size="10" text-anchor="end">$289</text>
+<line x1="64" y1="345.0" x2="860" y2="345.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="348.0" fill="#5a6a80" font-size="10" text-anchor="end">$349</text>
+<line x1="64" y1="288.0" x2="860" y2="288.0" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<text x="56" y="291.0" fill="#5a6a80" font-size="10" text-anchor="end">$409</text>
+<text x="64" y="302.0" fill="#d4a54a" font-size="11" font-weight="600" letter-spacing="1">PRICE PER SQ FT</text>
+<polyline points="64.0,396.1 84.9,435.6 88.3,429.6 88.3,410.3 95.3,489.7 557.6,314.3 575.0,383.0 727.9,419.4 769.6,446.5 860.0,385.0" fill="none" stroke="rgba(212,165,74,0.35)" stroke-width="1.5"/>
+<g class="pt">
+  <circle cx="64.0" cy="396.1" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="64.0" cy="396.1" r="12" fill="transparent"/>
+  <title>402 Dixie Dr · 11/05/25 · $295.08/sqft · Sold $540,000</title>
+</g>
+<g class="pt">
+  <circle cx="84.9" cy="435.6" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="84.9" cy="435.6" r="12" fill="transparent"/>
+  <title>571 Woodbine Ave · 11/11/25 · $253.33/sqft · Sold $380,000</title>
+</g>
+<g class="pt">
+  <circle cx="88.3" cy="429.6" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="88.3" cy="429.6" r="12" fill="transparent"/>
+  <title>607 W Chesapeake Ave · 11/12/25 · $259.63/sqft · Sold $581,581</title>
+</g>
+<g class="pt">
+  <circle cx="88.3" cy="410.3" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="88.3" cy="410.3" r="12" fill="transparent"/>
+  <title>613 W Chesapeake Ave · 11/12/25 · $279.99/sqft · Sold $915,000</title>
+</g>
+<g class="pt">
+  <circle cx="95.3" cy="489.7" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="95.3" cy="489.7" r="12" fill="transparent"/>
+  <title>608 Marwood Rd · 11/14/25 · $196.10/sqft · Sold $322,000</title>
+</g>
+<g class="pt">
+  <circle cx="557.6" cy="314.3" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="557.6" cy="314.3" r="12" fill="transparent"/>
+  <title>507 Allegheny Ave · 03/27/26 · $381.50/sqft · Sold $624,900</title>
+</g>
+<g class="pt">
+  <circle cx="575.0" cy="383.0" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="575.0" cy="383.0" r="12" fill="transparent"/>
+  <title>425 Woodbine Ave · 04/01/26 · $308.92/sqft · Sold $540,000</title>
+</g>
+<g class="pt">
+  <circle cx="727.9" cy="419.4" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="727.9" cy="419.4" r="12" fill="transparent"/>
+  <title>715 Morningside Dr · 05/15/26 · $270.39/sqft · Sold $610,000</title>
+</g>
+<g class="pt">
+  <circle cx="769.6" cy="446.5" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="769.6" cy="446.5" r="12" fill="transparent"/>
+  <title>612 W Chesapeake Ave · 05/27/26 · $241.81/sqft · Sold $767,500</title>
+</g>
+<g class="pt">
+  <circle cx="860.0" cy="385.0" r="5" fill="#d4a54a" stroke="#0a0a1a" stroke-width="1.5"/>
+  <circle cx="860.0" cy="385.0" r="12" fill="transparent"/>
+  <title>418 Range Rd · 06/22/26 · $306.77/sqft · Sold $552,500</title>
+</g>
+  <line x1="154.4" y1="516" x2="154.4" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="154.4" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">Dec</text>
+<line x1="262.1" y1="516" x2="262.1" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="262.1" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">Jan '26</text>
+<line x1="369.9" y1="516" x2="369.9" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="369.9" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">Feb</text>
+<line x1="467.2" y1="516" x2="467.2" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="467.2" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">Mar</text>
+<line x1="575.0" y1="516" x2="575.0" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="575.0" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">Apr</text>
+<line x1="679.2" y1="516" x2="679.2" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="679.2" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">May</text>
+<line x1="787.0" y1="516" x2="787.0" y2="521" stroke="#3a4a5a" stroke-width="1"/>
+<text x="787.0" y="534" fill="#5a6a80" font-size="10" text-anchor="middle">Jun</text>
+</svg>
+        <div class="chart-note">Hover any point for address, date, and price. $/sq ft uses estimated above-grade square footage from Bright MLS.</div>
       </div>
     </div>
 
     <!-- Sales Table -->
     <div class="section">
-      <h2>Recent Sales — West Towson (02/28/26 – 08/28/26)</h2>
+      <h2>Recent Sales — West Towson (11/05/25 – 06/22/26)</h2>
       <div style="overflow-x:auto;">
         <table class="sales-table">
           <thead>
@@ -222,47 +349,10 @@
               <th>List Price</th>
               <th>Sold Price</th>
               <th>Diff</th>
-              <th>$/Sq Ft</th>
               <th>DOM</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="num">08/19/26</td>
-              <td class="addr">23 Dixie Dr</td>
-              <td class="num">3 / 1 / 2</td>
-              <td class="num">1931</td>
-              <td class="num">1,858</td>
-              <td class="num">$575,000</td>
-              <td class="num">$586,000</td>
-              <td class="pos num">+2%</td>
-              <td class="num">$315</td>
-              <td class="num">7</td>
-            </tr>
-            <tr>
-              <td class="num">08/18/26</td>
-              <td class="addr">419 Georgia Ct</td>
-              <td class="num">4 / 3 / 1</td>
-              <td class="num">1937</td>
-              <td class="num">3,422</td>
-              <td class="num">$799,900</td>
-              <td class="num">$825,000</td>
-              <td class="pos num">+3%</td>
-              <td class="num">$241</td>
-              <td class="num">4</td>
-            </tr>
-            <tr>
-              <td class="num">07/28/26</td>
-              <td class="addr">608 Marwood Rd</td>
-              <td class="num">3 / 3 / 0</td>
-              <td class="num">1936</td>
-              <td class="num">2,400</td>
-              <td class="num">$649,900</td>
-              <td class="num">$625,000</td>
-              <td class="neg num">−4%</td>
-              <td class="num">$260</td>
-              <td class="num">105</td>
-            </tr>
             <tr>
               <td class="num">06/22/26</td>
               <td class="addr">418 Range Rd</td>
@@ -272,19 +362,17 @@
               <td class="num">$546,000</td>
               <td class="num">$552,500</td>
               <td class="pos num">+1%</td>
-              <td class="num">$307</td>
               <td class="num">12</td>
             </tr>
-            <tr class="highlight">
+            <tr>
               <td class="num">05/27/26</td>
-              <td class="addr">612 W Chesapeake Ave <span style="color:#d4a54a; font-size:0.7rem;">◆ closest comp</span></td>
+              <td class="addr">612 W Chesapeake Ave</td>
               <td class="num">4 / 3 / 0</td>
               <td class="num">1952</td>
               <td class="num">3,174</td>
               <td class="num">$785,000</td>
               <td class="num">$767,500</td>
               <td class="neg num">−2%</td>
-              <td class="num">$242</td>
               <td class="num">30</td>
             </tr>
             <tr>
@@ -296,7 +384,6 @@
               <td class="num">$595,000</td>
               <td class="num">$610,000</td>
               <td class="pos num">+3%</td>
-              <td class="num">$270</td>
               <td class="num">1</td>
             </tr>
             <tr>
@@ -308,7 +395,6 @@
               <td class="num">$529,000</td>
               <td class="num">$540,000</td>
               <td class="pos num">+2%</td>
-              <td class="num">$309</td>
               <td class="num">68</td>
             </tr>
             <tr>
@@ -320,67 +406,65 @@
               <td class="num">$614,900</td>
               <td class="num">$624,900</td>
               <td class="pos num">+2%</td>
-              <td class="num">$381</td>
-              <td class="num">—</td>
+              <td class="num">9</td>
+            </tr>
+            <tr>
+              <td class="num">11/14/25</td>
+              <td class="addr">608 Marwood Rd</td>
+              <td class="num">3 / 2 / 0</td>
+              <td class="num">1936</td>
+              <td class="num">1,642</td>
+              <td class="num">$300,000</td>
+              <td class="num">$322,000</td>
+              <td class="pos num">+7%</td>
+              <td class="num">16</td>
+            </tr>
+            <tr>
+              <td class="num">11/12/25</td>
+              <td class="addr">607 W Chesapeake Ave</td>
+              <td class="num">2 / 2 / 1</td>
+              <td class="num">1984</td>
+              <td class="num">2,240</td>
+              <td class="num">$520,000</td>
+              <td class="num">$581,581</td>
+              <td class="pos num">+12%</td>
+              <td class="num">3</td>
+            </tr>
+            <tr>
+              <td class="num">11/12/25</td>
+              <td class="addr">613 W Chesapeake Ave</td>
+              <td class="num">4 / 2 / 2</td>
+              <td class="num">1981</td>
+              <td class="num">3,268</td>
+              <td class="num">$949,900</td>
+              <td class="num">$915,000</td>
+              <td class="neg num">−4%</td>
+              <td class="num">5</td>
+            </tr>
+            <tr>
+              <td class="num">11/11/25</td>
+              <td class="addr">571 Woodbine Ave</td>
+              <td class="num">4 / 2 / 0</td>
+              <td class="num">1945</td>
+              <td class="num">1,500</td>
+              <td class="num">$399,900</td>
+              <td class="num">$380,000</td>
+              <td class="neg num">−5%</td>
+              <td class="num">10</td>
+            </tr>
+            <tr>
+              <td class="num">11/05/25</td>
+              <td class="addr">402 Dixie Dr</td>
+              <td class="num">3 / 2 / 1</td>
+              <td class="num">1941</td>
+              <td class="num">1,830</td>
+              <td class="num">$599,000</td>
+              <td class="num">$540,000</td>
+              <td class="neg num">−10%</td>
+              <td class="num">19</td>
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
-
-    <!-- Price per Sq Ft Chart -->
-    <div class="section">
-      <h2>Sold Price per Square Foot</h2>
-      <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:18px 14px;">
-        <svg viewBox="0 0 640 290" width="100%" role="img" aria-label="Bar chart of sold price per square foot for eight recent West Towson home sales" style="display:block; max-width:100%; height:auto; font-family:'Inter',sans-serif;">
-          <!-- gridlines -->
-          <line x1="160" y1="20" x2="160" y2="245" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-          <line x1="270" y1="20" x2="270" y2="245" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-          <line x1="380" y1="20" x2="380" y2="245" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-          <line x1="490" y1="20" x2="490" y2="245" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-          <!-- axis labels -->
-          <text x="160" y="262" fill="#5a6a80" font-size="10" text-anchor="middle">$0</text>
-          <text x="270" y="262" fill="#5a6a80" font-size="10" text-anchor="middle">$100</text>
-          <text x="380" y="262" fill="#5a6a80" font-size="10" text-anchor="middle">$200</text>
-          <text x="490" y="262" fill="#5a6a80" font-size="10" text-anchor="middle">$300</text>
-          <text x="600" y="262" fill="#5a6a80" font-size="10" text-anchor="middle">$400</text>
-          <!-- median line at $289 -->
-          <line x1="478" y1="20" x2="478" y2="245" stroke="#d4a54a" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
-          <text x="478" y="14" fill="#d4a54a" font-size="9" text-anchor="middle" opacity="0.9">median $289</text>
-          <!-- bars: scale 1.1px per $1, baseline x=160, bar height 18, gap 10 -->
-          <text x="154" y="39" fill="#e0dcd4" font-size="11" text-anchor="end">507 Allegheny Ave</text>
-          <rect x="160" y="26" width="419" height="18" rx="3" fill="#d4a54a" opacity="0.85"/>
-          <text x="585" y="39" fill="#f5f0e8" font-size="11" font-weight="600">$381</text>
-
-          <text x="154" y="67" fill="#e0dcd4" font-size="11" text-anchor="end">23 Dixie Dr</text>
-          <rect x="160" y="54" width="347" height="18" rx="3" fill="#d4a54a" opacity="0.75"/>
-          <text x="513" y="67" fill="#f5f0e8" font-size="11" font-weight="600">$315</text>
-
-          <text x="154" y="95" fill="#e0dcd4" font-size="11" text-anchor="end">425 Woodbine Ave</text>
-          <rect x="160" y="82" width="340" height="18" rx="3" fill="#d4a54a" opacity="0.75"/>
-          <text x="506" y="95" fill="#f5f0e8" font-size="11" font-weight="600">$309</text>
-
-          <text x="154" y="123" fill="#e0dcd4" font-size="11" text-anchor="end">418 Range Rd</text>
-          <rect x="160" y="110" width="338" height="18" rx="3" fill="#d4a54a" opacity="0.75"/>
-          <text x="504" y="123" fill="#f5f0e8" font-size="11" font-weight="600">$307</text>
-
-          <text x="154" y="151" fill="#e0dcd4" font-size="11" text-anchor="end">715 Morningside Dr</text>
-          <rect x="160" y="138" width="297" height="18" rx="3" fill="#d4a54a" opacity="0.75"/>
-          <text x="463" y="151" fill="#f5f0e8" font-size="11" font-weight="600">$270</text>
-
-          <text x="154" y="179" fill="#e0dcd4" font-size="11" text-anchor="end">608 Marwood Rd</text>
-          <rect x="160" y="166" width="286" height="18" rx="3" fill="#d4a54a" opacity="0.75"/>
-          <text x="452" y="179" fill="#f5f0e8" font-size="11" font-weight="600">$260</text>
-
-          <text x="154" y="207" fill="#e0dcd4" font-size="11" text-anchor="end">612 W Chesapeake Ave ◆</text>
-          <rect x="160" y="194" width="266" height="18" rx="3" fill="#d4a54a" opacity="0.9"/>
-          <text x="432" y="207" fill="#f5f0e8" font-size="11" font-weight="600">$242</text>
-
-          <text x="154" y="235" fill="#e0dcd4" font-size="11" text-anchor="end">419 Georgia Ct</text>
-          <rect x="160" y="222" width="265" height="18" rx="3" fill="#d4a54a" opacity="0.75"/>
-          <text x="431" y="235" fill="#f5f0e8" font-size="11" font-weight="600">$241</text>
-        </svg>
-        <p style="font-size:0.7rem; color:#5a6a80; margin-top:10px; text-align:center;">Sold price ÷ finished square footage. Dashed line marks the median ($289/sq ft). ◆ marks the closest comparable (612 W Chesapeake Ave).</p>
       </div>
     </div>
 
@@ -388,14 +472,14 @@
     <div class="section">
       <h2>Takeaways</h2>
       <article style="font-size:0.82rem; color:#b8c4d4; line-height:1.7;">
-        <p>Six of eight homes closed at or above list price, with the median sale landing at <strong>$617,000</strong> and an average list-to-sold spread of <strong>+0.9%</strong>. West Towson kept its 2025 pattern: well-priced inventory moves in days (three sales at ≤7 DOM), while overpriced listings sit — 608 Marwood Rd took 105 days to close at −4%.</p>
-        <p style="margin-top:8px;">The most useful comp for <strong>512 W Chesapeake Ave</strong> is the immediate neighbor at <strong>612 W Chesapeake Ave</strong> — sold May 27, 2026 for <strong>$767,500</strong> ($242/sq ft, 4bd/3ba, 3,174 sq ft, built 1952). Same street, similar footprint, but newer construction and smaller floor plan than 512 (1903 vintage, 4,150 sq ft, 0.39 ac). The larger, similarly-aged <strong>419 Georgia Ct</strong> (3,422 sq ft, built 1937) closed at <strong>$825,000</strong> just three months later. Together they bracket the current West Towson upper-middle band. See <a href="/home-value" style="color:#d4a54a; text-decoration:none; border-bottom:1px solid rgba(212,165,74,0.3);">Home Value</a> for full valuation modeling.</p>
+        <p>Six of ten homes closed at or above list price. The two biggest deltas — 607 W Chesapeake Ave (+12%) and 402 Dixie Dr (−10%) — both moved quickly (3 and 19 days), suggesting the West Towson market punishes overpricing fast but rewards well-priced inventory. The spring 2026 sales reinforce the pattern: 715 Morningside Dr went under contract in a single day at +3%, while 612 W Chesapeake Ave needed 30 days and closed −2% below list.</p>
+        <p style="margin-top:8px;">The largest sale in the window, <strong>613 W Chesapeake Ave</strong> ($915,000, 3,268 sq ft, built 1981) is the closest direct neighbor and the most useful upper-bound comp for 512 W Chesapeake — though the subject home is older (1903), larger lot (0.39 ac), and significantly larger floor plan at 4,150 sq ft. The average estimated value of $851,573 (see <a href="/home-value" style="color:#d4a54a; text-decoration:none; border-bottom:1px solid rgba(212,165,74,0.3);">Home Value</a>) is consistent with this neighborhood band.</p>
       </article>
     </div>
 
     <!-- Disclaimer -->
     <div class="disclaimer">
-      <strong>Source &amp; disclaimer:</strong> Sales report compiled by <strong>Meg Weetenkamp, REALTOR® — Cummings &amp; Co. Realtors</strong> (1515 La Belle Ave Suite 5, Ruxton MD 21204) from <strong>Bright MLS</strong> public records; report received September 2026 covering sales 02/28/2026–08/28/2026. Non-MLS properties are not included. Inclusion does not imply endorsement of any listing agent or lender. Comparable sales are illustrative only and are not a formal appraisal. Property values vary based on condition, improvements, lot, and market conditions at the time of sale.
+      <strong>Source &amp; disclaimer:</strong> Sales data compiled from Bright MLS public records via RSPusa.com and the Team Bassett West Towson recent sales report (team-bassett.com). Inclusion does not imply endorsement of any listing agent or lender. Comparable sales are illustrative only and are not a formal appraisal. Property values vary based on condition, improvements, lot, and market conditions at the time of sale. Last updated August 2026.
     </div>
 
     <div class="footer">
