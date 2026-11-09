@@ -51,6 +51,7 @@
     .card .cap { font-family: 'Inter', sans-serif; font-size: 0.98rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
     .card .meta { margin-top: 6px; font-size: 0.72rem; color: var(--dim); letter-spacing: 0.4px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
     .card .meta .dot { opacity: 0.5; }
+    .card .meta:empty { display: none; }
     .footer { text-align: center; padding: 28px 20px 40px; font-size: 0.72rem; color: var(--dim); border-top: 1px solid rgba(255,255,255,0.04); }
     .footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .footer .tiny { font-size: 0.62rem; color: #3a4a5a; margin-top: 6px; }
@@ -107,43 +108,43 @@
       <figure class="card" data-idx="0">
         <img src="/hood/web/img-01-canopy.jpg" alt="Tall maple tree overhead with green and yellow leaves against a bright blue sky, telephone wires crossing through the branches" width="1180" height="1400" loading="eager" decoding="async">
         <figcaption>
-          <div class="cap">October canopy on the walk home</div>
-          <div class="meta"><span>West Chesapeake Ave</span><span class="dot">·</span><span>Oct 2025</span></div>
+          <div class="cap">Maple canopy</div>
+          <div class="meta"><span>Fall 2025</span></div>
         </figcaption>
       </figure>
       <figure class="card" data-idx="1">
         <img src="/hood/web/img-02-porch.jpg" alt="Front steps in warm afternoon sun with a large pumpkin, a bright magenta potted mum, a smaller white pumpkin, and scattered dry maple leaves" width="1050" height="1400" loading="eager" decoding="async">
         <figcaption>
-          <div class="cap">Porch is officially dressed</div>
-          <div class="meta"><span>The stoop</span><span class="dot">·</span><span>Oct 2025</span></div>
+          <div class="cap">Pumpkin and mums on the steps</div>
+          <div class="meta"><span>Fall 2025</span></div>
         </figcaption>
       </figure>
       <figure class="card" data-idx="2">
         <img src="/hood/web/img-03-motorcycle.jpg" alt="A black Honda café racer motorcycle parked at a stone-wall storefront in late afternoon sun, white helmet resting on the wall" width="1400" height="1050" loading="eager" decoding="async">
         <figcaption>
-          <div class="cap">Café racer out front</div>
-          <div class="meta"><span>Towson</span><span class="dot">·</span><span>Oct 2025</span></div>
+          <div class="cap">Honda café racer</div>
+          <div class="meta"><span>Fall 2025</span></div>
         </figcaption>
       </figure>
       <figure class="card" data-idx="3">
         <img src="/hood/web/img-04-painting.jpg" alt="A colorful abstract painting on canvas filled with overlapping curved and square shapes in pink, blue, green, yellow, and orange" width="1050" height="1400" loading="eager" decoding="async">
         <figcaption>
-          <div class="cap">Studio drop-in — work in progress</div>
-          <div class="meta"><span>A neighbor's garage</span><span class="dot">·</span><span>Oct 2025</span></div>
+          <div class="cap">Abstract painting</div>
+          <div class="meta"></div>
         </figcaption>
       </figure>
       <figure class="card" data-idx="4">
         <img src="/hood/web/img-05-book.jpg" alt="Hardcover copy of The Things We Never Say, a novel by Elizabeth Strout, resting on a marble countertop" width="1050" height="1400" loading="lazy" decoding="async">
         <figcaption>
-          <div class="cap">Shelf arrival: new Strout</div>
-          <div class="meta"><span>Kitchen counter</span><span class="dot">·</span><span>Nov 2025</span></div>
+          <div class="cap">Elizabeth Strout — The Things We Never Say</div>
+          <div class="meta"></div>
         </figcaption>
       </figure>
       <figure class="card" data-idx="5">
         <img src="/hood/web/img-06-dog.jpg" alt="Nova, a black lab, curled up on a cream-colored fleece bed hugging a shaggy white toy chicken with a red accent" width="1010" height="1400" loading="lazy" decoding="async">
         <figcaption>
-          <div class="cap">Nova + chicken: inseparable</div>
-          <div class="meta"><span>Living room HQ</span><span class="dot">·</span><span>Nov 2025</span></div>
+          <div class="cap">Nova with her toy chicken</div>
+          <div class="meta"></div>
         </figcaption>
       </figure>
   </main>
@@ -167,7 +168,7 @@
   </footer>
 
   <script>
-    const PHOTOS = [{"src":"/hood/web/img-01-canopy.jpg","alt":"Tall maple tree overhead with green and yellow leaves against a bright blue sky, telephone wires crossing through the branches","cap":"October canopy on the walk home","place":"West Chesapeake Ave","date":"Oct 2025","w":1180,"h":1400},{"src":"/hood/web/img-02-porch.jpg","alt":"Front steps in warm afternoon sun with a large pumpkin, a bright magenta potted mum, a smaller white pumpkin, and scattered dry maple leaves","cap":"Porch is officially dressed","place":"The stoop","date":"Oct 2025","w":1050,"h":1400},{"src":"/hood/web/img-03-motorcycle.jpg","alt":"A black Honda café racer motorcycle parked at a stone-wall storefront in late afternoon sun, white helmet resting on the wall","cap":"Café racer out front","place":"Towson","date":"Oct 2025","w":1400,"h":1050},{"src":"/hood/web/img-04-painting.jpg","alt":"A colorful abstract painting on canvas filled with overlapping curved and square shapes in pink, blue, green, yellow, and orange","cap":"Studio drop-in — work in progress","place":"A neighbor's garage","date":"Oct 2025","w":1050,"h":1400},{"src":"/hood/web/img-05-book.jpg","alt":"Hardcover copy of The Things We Never Say, a novel by Elizabeth Strout, resting on a marble countertop","cap":"Shelf arrival: new Strout","place":"Kitchen counter","date":"Nov 2025","w":1050,"h":1400},{"src":"/hood/web/img-06-dog.jpg","alt":"Nova, a black lab, curled up on a cream-colored fleece bed hugging a shaggy white toy chicken with a red accent","cap":"Nova + chicken: inseparable","place":"Living room HQ","date":"Nov 2025","w":1010,"h":1400}];
+    const PHOTOS = [{"src":"/hood/web/img-01-canopy.jpg","alt":"Tall maple tree overhead with green and yellow leaves against a bright blue sky, telephone wires crossing through the branches","cap":"Maple canopy","place":"","date":"Fall 2025","w":1180,"h":1400},{"src":"/hood/web/img-02-porch.jpg","alt":"Front steps in warm afternoon sun with a large pumpkin, a bright magenta potted mum, a smaller white pumpkin, and scattered dry maple leaves","cap":"Pumpkin and mums on the steps","place":"","date":"Fall 2025","w":1050,"h":1400},{"src":"/hood/web/img-03-motorcycle.jpg","alt":"A black Honda café racer motorcycle parked at a stone-wall storefront in late afternoon sun, white helmet resting on the wall","cap":"Honda café racer","place":"","date":"Fall 2025","w":1400,"h":1050},{"src":"/hood/web/img-04-painting.jpg","alt":"A colorful abstract painting on canvas filled with overlapping curved and square shapes in pink, blue, green, yellow, and orange","cap":"Abstract painting","place":"","date":"","w":1050,"h":1400},{"src":"/hood/web/img-05-book.jpg","alt":"Hardcover copy of The Things We Never Say, a novel by Elizabeth Strout, resting on a marble countertop","cap":"Elizabeth Strout — The Things We Never Say","place":"","date":"","w":1050,"h":1400},{"src":"/hood/web/img-06-dog.jpg","alt":"Nova, a black lab, curled up on a cream-colored fleece bed hugging a shaggy white toy chicken with a red accent","cap":"Nova with her toy chicken","place":"","date":"","w":1010,"h":1400}];
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
     const lbCap = document.getElementById('lb-cap');
